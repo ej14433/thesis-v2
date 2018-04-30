@@ -287,23 +287,25 @@ In order to implement a camera which could be controlled using the Google Daydre
 The elements which a user interacts with in the 360-image environment are UI labels. Following the steps outlined in Section \ref{googlevr}, a panel object within the scene with its Raycast Target option set to true is all that is necessary for the UI element to be interactive. These elements are then placed overlaying each of the nine objects; for the CG environment this can be seen in Figure \ref{model}, and in Figure \ref{360-labels}. 
 
 \begin{center}
-\hfill \break
-\includegraphics[width=0.6\textwidth]{images/360-labels}
-\captionof{figure}{Sceenshot of UI Labels overlaid onto 360-image in Unity.}
-\label{360-labels}
-\hfill \break
+    \centering
+    \begin{minipage}{0.45\textwidth}
+        \centering
+        \includegraphics[width=1\textwidth]{images/360-labels.png}
+        \captionof{figure}{Sceenshot of UI Labels overlaid onto 360-image in Unity.}
+        \label{360-labels}
+    \end{minipage}\hfill
+    \begin{minipage}{0.45\textwidth}
+        \centering
+        \includegraphics[width=1\textwidth]{images/360-event-component.png}
+        \captionof{figure}{Sceenshot of the Event Trigger component attached to each UI label in the 360-environment.}
+        \label{360-labels}
+    \end{minipage}
 \end{center}
 
-In the 360-image environment it is these labels have event trigger components. After a user selects a UI label, the material of the sphere changes to the image which showcases that specific element. :
 
-\begin{center}
-\hfill \break
-\includegraphics[width=0.6\textwidth]{images/360-event-component.png}
-\captionof{figure}{Sceenshot of the Event Trigger component attached to each UI label.}
-\label{360-labels}
-\hfill \break
-\end{center}
+In the 360-image environment it is these labels that have event trigger components, illustrated in Figure \ref{360-labels}. After a user selects a UI label, the material of the sphere changes to the image which showcases that specific element.
 
+In the computer-generated environment it is the objects themselves, or the hatches to those objects which a user interactes with. Each of the interactable objects have colliders, and event trigger components. An additional feature of the CG environment is that the hatched are animated.  
 \\
 \begin{lstlisting}
 	public GameObject player;
