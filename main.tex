@@ -291,29 +291,49 @@ The elements which a user interacts with in the 360-image environment are UI lab
     \begin{minipage}{0.45\textwidth}
         \centering
         \includegraphics[width=1\textwidth]{images/360-labels.png}
-        \captionof{figure}{Sceenshot of UI Labels overlaid onto 360-image in Unity.}
+        \captionof{figure}{Screenshot of UI Labels overlaid onto 360-image in Unity.}
         \label{360-labels}
     \end{minipage}\hfill
     \begin{minipage}{0.45\textwidth}
         \centering
         \includegraphics[width=1\textwidth]{images/360-event-component.png}
-        \captionof{figure}{Sceenshot of the Event Trigger component attached to each UI label in the 360-environment.}
-        \label{360-labels}
+        \captionof{figure}{Screenshot of the Event Trigger component attached to each UI label in the 360-environment.}
+        \label{360-event}
     \end{minipage}
 \end{center}
 
 
-In the 360-image environment it is these labels that have event trigger components, illustrated in Figure \ref{360-labels}. After a user selects a UI label, the material of the sphere changes to the image which showcases that specific element.
+In the 360-image environment it is these labels that have event trigger components, illustrated in Figure \ref{360-event}. After a user selects a UI label, the material of the sphere changes to the image which showcases that specific element.
 
-In the computer-generated environment it is the objects themselves, or the hatches to those objects which a user interactes with. Each of the interactable objects have colliders, and event trigger components. An additional feature of the CG environment is that the hatched are animated.  
-\\
-\begin{lstlisting}
-	public GameObject player;
+In the computer-generated environment it is the objects themselves, or the hatches to those objects which a user interacts with. Each of the interactable objects have colliders, and event trigger components. An additional feature of the CG environment is that the hatches are animated; the event trigger component for these objects is shown in Figure \ref{cg-event}. This event trigger calls the \lstinline{GoToLocation} function, shown in Figure \ref{location}. 
 
-	public void GoToLocation(GameObject location) {
-		player.transform.position = location.transform.position;
-	}
-\end{lstlisting}
+\begin{center}
+    \centering
+    \begin{minipage}{0.6\textwidth}
+    \begin{lstlisting}
+    	public GameObject player;
+    
+    	public void GoToLocation(GameObject location) {
+    		player.transform.position = location.transform.position;
+    	}
+    \end{lstlisting}
+    \captionof{figure}{Code snippet for changing player location.}
+    \label{location}
+    \end{minipage}\hfill
+    \begin{minipage}{0.35\textwidth}
+        \centering
+        \includegraphics[width=1\textwidth]{images/CG-event-component.png}
+        \captionof{figure}{Screenshot of the Event Trigger component attached to each interactable object in the CG-environment.}
+        \label{CG-event}
+    \end{minipage}
+\end{center}
+
+
+To animate the hatches, or objects themselves, each animated object has an animator component with a controller as shown in Figure \ref{animator}.
+
+
+
+
 
 
 
