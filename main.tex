@@ -215,11 +215,11 @@ In order to collect memory test results remotely for users, Github Pages was als
 The requirements for this application were to construct two environments within which users are able to explore. Crucially, these applications should be interacted with in the same way and use the same hardware, in order to not introduce uncontrolled variables to the study. Additionally, in order to avoid motion sickness in users both environments will not allow for continuous adjustment of location in the environment. Thus, users will only be able to move discretely throughout the scene by selecting locations they which to move to. 
 
 
-\section{Setting Up The Environments}
-\subsection{Computer-Generated Environment}
+\section{Computer-Generated Environment}
+\subsection{Modelling}
 This project required the construction of two applications. First of which, the CG environment utilised 3D models constructed in the professional 3D computer graphics application Autodesk Maya. These models are then imported into the free-to-use cross-platform game-engine, Unity. Utilising the Google VR SDK, a VR application is constructed. Unity is able to build to the Android platform. Using an android device and a Google Daydream View Headset, users are able to interact with the constructed environment.
 
-\subsubsection{Maya}
+\subsubsection{Boat}
 A crucial factor of any virtual environment is scale. In this case, it was important that the 3D-model of the vessel was true to life. Maya offers fantastic tools to enable this, namely tracing over image planes. Imported images of the object being reconstructed are overlaid onto the workspace and set to be partially transparent. Using the orthographic view, the image can be perfectly traced to match the object. This is demonstrated in Figure \ref{image-plane}. 
 
 The vast majority of elements in the D-Class model can be constructed using the polygonal primitives. These primitives are enough to construct highly complex models, if used in conjunction with soft selection, and smoothing.
@@ -242,10 +242,62 @@ The vast majority of elements in the D-Class model can be constructed using the 
 \hfill \break
 \end{minipage}
 
+\subsubsection{Items}
 % Add discussion about constructing all nine objects + images of all nine objects
+\begin{minipage}{\textwidth}
+\begin{center}
+    \centering
+    \begin{minipage}{0.25\textwidth}
+        \centering
+        \includegraphics[width=1\textwidth]{images/anchor.png}
+    \end{minipage}\hfill
+    \begin{minipage}{0.25\textwidth}
+        \centering
+        \includegraphics[width=1\textwidth]{images/compass.png}
+    \end{minipage}\hfill
+    \begin{minipage}{0.25\textwidth}
+        \centering
+        \includegraphics[width=1\textwidth]{images/firstaid.png}
+    \end{minipage}\hfill
+\end{center}
+\begin{center}
+    \centering
+    \begin{minipage}{0.25\textwidth}
+        \centering
+        \includegraphics[width=1\textwidth]{images/gloves.png}
+    \end{minipage}\hfill
+    \begin{minipage}{0.25\textwidth}
+        \centering
+        \includegraphics[width=1\textwidth]{images/handheld.png}
+    \end{minipage}\hfill
+    \begin{minipage}{0.25\textwidth}
+        \centering
+        \includegraphics[width=1\textwidth]{images/light.png}
+    \end{minipage}\hfill
+\end{center}
+\begin{center}
+    \centering
+    \begin{minipage}{0.25\textwidth}
+        \centering
+        \includegraphics[width=1\textwidth]{images/prop.png}
+    \end{minipage}\hfill
+    \begin{minipage}{0.25\textwidth}
+        \centering
+        \includegraphics[width=1\textwidth]{images/tow.png}
+    \end{minipage}\hfill
+    \begin{minipage}{0.25\textwidth}
+        \centering
+        \includegraphics[width=1\textwidth]{images/vhf.png}
+    \end{minipage}\hfill
+\end{center}
+\captionof{figure}{3D models of the nine items that each user would be required to recall}
+\end{minipage}
 
+Each item is modelled using the same method of tracing over an image plane. The images that are traced over are the images that are used in the 360-environment. This ensures that there is little variation between the environments for how recognisable each object is. 
 
-\subsubsection{Unity}
+The intricacy of some of these models means that it was not easy to use the simple polygonal primitives which are offered by Maya. Instead, the more sophisticated curves, and NURB surfaces needed to be used. Once constructed, these can be converted into polygonal meshes automatically by Maya, and then imported into the model of the entire vessel. In particular, the gloves required this technique. 
+
+\subsection{Unity}
 Importing the Maya model into Unity is easy. A particularly useful workflow is saving from Maya directly into the Unity assets folder, thus all changes in the Maya file are changed within Unity on save. In order to make the model interact with the environment and to raycasts simple collider primitives are positioned over the model. Although the environment is static, in order for the reticle from the Google Daydream controller to be usable this is a necessity.  
 
 \begin{minipage}{\textwidth}
@@ -257,10 +309,10 @@ Importing the Maya model into Unity is easy. A particularly useful workflow is s
 \hfill \break
 \end{minipage}
 
-\subsection{360-Image Environment}
+\section{360-Image Environment}
 The second application which was constructed was an interactive real world environment. This utilises 360-degree images from the actual environment. Users are then able to use the UI elements to explore this environment, and the objects within it. 
 
-\subsubsection{Samsung Gear 360}
+\subsection{Samsung Gear 360}
 There are many modern cameras which are designed specifically for capturing 360-degree images and video. In this project, the Samsung Gear 360 device was used. Images were captured using a tripod. These images are then imported and stitched using the Gear360 application, and these images are then immediately usable within Unity. An important note to make in order to reduce any need for post processing, is that all images should be take with the same rotation. This ensures that a users orientation within the environment is consistent throughout exploration. 
 
 \begin{minipage}{\textwidth}
@@ -272,7 +324,7 @@ There are many modern cameras which are designed specifically for capturing 360-
 \hfill \break
 \end{minipage}
 
-\subsubsection{Unity}
+\subsection{Unity}
 Unity makes constructing 360-degree environments trivial. As detailed in a Unity blog post in 2017 \footnote{How to integrate 360 video or images with Unity \url{https://blogs.unity3d.com/2017/07/27/how-to-integrate-360-video-with-unity/}}: 
 
 \begin{itemize}
@@ -613,7 +665,7 @@ Testing patch knowledge requires the user to travel around a small geographical 
 \captionof{figure}{New Quay Harbour, West Wales}
 \label{nq}
 \hfill \break
-\end{minipage}}
+\end{minipage}
 
 
 
