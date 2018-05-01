@@ -297,6 +297,68 @@ Each item is modelled using the same method of tracing over an image plane. The 
 
 The intricacy of some of these models means that it was not easy to use the simple polygonal primitives which are offered by Maya. Instead, the more sophisticated curves, and NURB surfaces needed to be used. Once constructed, these can be converted into polygonal meshes automatically by Maya, and then imported into the model of the entire vessel. In particular, the gloves required this technique. 
 
+\subsubsection{Gloves}
+Using Maya's powerful tools effectively can make formerly complex tasks much more manageable. In this case, Maya's curves, and NURB surfaces allows a user to create complex geometry quickly. The process for constructing the gloves item is as follows: create CV curve outlining desired shape; create a planar surface from this curve; convert this surface to a polygon; extrude the polygon; add divisions to smooth. This workflow is illustrated in Figure \ref{gloves}
+
+\begin{minipage}{\textwidth}\label{gloves}
+\begin{center}
+    \centering
+    \begin{minipage}{0.18\textwidth}
+        \centering
+        \includegraphics[width=1\textwidth]{images/curve.png}
+    \end{minipage}\hfill
+    \begin{minipage}{0.18\textwidth}
+        \centering
+        \includegraphics[width=1\textwidth]{images/planar.png}
+    \end{minipage}\hfill
+    \begin{minipage}{0.18\textwidth}
+        \centering
+        \includegraphics[width=1\textwidth]{images/topoly.png}
+    \end{minipage}\hfill
+        \centering
+    \begin{minipage}{0.18\textwidth}
+        \centering
+        \includegraphics[width=1\textwidth]{images/extrude.png}
+    \end{minipage}\hfill
+    \begin{minipage}{0.18\textwidth}
+        \centering
+        \includegraphics[width=1\textwidth]{images/adddivision.png}
+    \end{minipage}\hfill
+\end{center}
+\captionof{figure}{Workflow used to construct the 3D model of the gloves item.}
+\end{minipage}
+
+\subsubsection{Tow Rope}
+Another task that would have otherwise been complex was the construction of the tow rope model. An intricate spool of rope would be almost impossible to model manually. Soft selection is a tool which assisted in this, soft selection allows a user to select a vertex, edge, or face, then when moving that item nearby items are affected relative to the change of that item and their distance from it. The process for this model was: construct 2D curve, by tracing image plane of object; position polygonal face at end of rope; extrude polygon along rope; use soft selection to add third dimension to model.These steps are illustrated in Figure \ref{tow}
+
+\begin{minipage}{\textwidth}\label{tow}
+\begin{center}
+    \centering
+    \begin{minipage}{0.18\textwidth}
+        \centering
+        \includegraphics[width=1\textwidth]{images/towcurve.png}
+    \end{minipage}\hfill
+    \begin{minipage}{0.18\textwidth}
+        \centering
+        \includegraphics[width=1\textwidth]{images/towpoly.png}
+    \end{minipage}\hfill
+    \begin{minipage}{0.18\textwidth}
+        \centering
+        \includegraphics[width=1\textwidth]{images/towextrude.png}
+    \end{minipage}\hfill
+        \centering
+    \begin{minipage}{0.18\textwidth}
+        \centering
+        \includegraphics[width=1\textwidth]{images/towsoft.png}
+    \end{minipage}\hfill
+    \begin{minipage}{0.18\textwidth}
+        \centering
+        \includegraphics[width=1\textwidth]{images/towdivisions.png}
+    \end{minipage}\hfill
+\end{center}
+\captionof{figure}{Workflow used to construct the 3D model of the tow rope item.}
+\end{minipage}
+
 \subsection{Unity}
 Importing the Maya model into Unity is easy. A particularly useful workflow is saving from Maya directly into the Unity assets folder, thus all changes in the Maya file are changed within Unity on save. In order to make the model interact with the environment and to raycasts simple collider primitives are positioned over the model. Although the environment is static, in order for the reticle from the Google Daydream controller to be usable this is a necessity.  
 
