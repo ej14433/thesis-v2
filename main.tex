@@ -1,5 +1,5 @@
 
-\documentclass[a4paper, openright, twoside]{report}
+\documentclass[a4paper, openright, twoside]{book}
 
 %% Language and font encodings
 \usepackage[english]{babel}
@@ -8,6 +8,7 @@
 \usepackage[margin=1cm]{caption}
 \usepackage[table,xcdraw]{xcolor}
 \usepackage{subfigure}
+\usepackage[toc,page]{appendix}
 \date{}
 
 \usepackage{geometry}
@@ -56,7 +57,6 @@
   tabsize=2,	                   % sets default tabsize to 2 spaces
   title=\lstname                   % show the filename of files included with \lstinputlisting; also try caption instead of title
 }
-
 \bibliographystyle{agsm}
 
 \parskip 4mm
@@ -66,13 +66,13 @@
 
 \begin{document}
 \maketitle
-
+\frontmatter
 \tableofcontents{}
 
-\begin{abstract}
+\chapter*{Abstract}
 The purpose of this study is to utilise the recent opportunities to construct more accessible virtual training environments, afforded by advances in hardware and software technologies; powerful game development platforms, 360-degree cameras, and VR headsets. These virtual environments have the potential to be utilised in multiple industries, this project focusses specifically on the charity lifesaving organisation for saving lives at sea, the RNLI. This plethora of new technologies lead to many different methods with which to construct a virtual training environment, this study aims to directly compare two methods; 360-image environment vs. computer modelled environment. These environments were constructed in Unity3D, the free game development platform. Users interacted with this environment using Google Daydream View. In order to conclude the most effective medium for training, this project focussed on training a user's landmark knowledge. A test was constructed where a user is required to memorise the location of 9 items within an environment. After completion, users complete a memory test, and again a week later. Results indicate that the computer-modelled environment was far more effective in training a user's landmark knowledge. It is likely, although inconclusive, that this is caused by the difference of stereoscopic vision to monoscopic. Further studies are required to conclude the effect of context in which a user's required to recall their trained knowledge on a user's spatial memory.  
-\end{abstract}
 
+\mainmatter
 \chapter{Introduction, and Background}\label{intro_chapter}
 
 \subsection{Royal National Lifeboat Institution}
@@ -87,12 +87,13 @@ The current format of training at the RNLI is that each crew member follows a st
 
 To bridge this divide between theory and practice, all crew must attend a 1-week training course at the RNLI College in Poole. During this week, crew receive practical training in a specifically built facility- shown in Figure \ref{college}; this training ranges from fire fighting, capsize drills, and sea survival. This process is expensive, but absolutely crucial to the safe functioning of Lifeboat stations. Due to the turnover of voluntary crew members, which increases the average costs of a fully trained crew member, It is not possible to frequently train crew in this manner. 
 
-\begin{center}
-\includegraphics[width=0.45\textwidth]{images/rnli_college.jpg}
+\begin{minipage}{\textwidth}
+\centering
+\includegraphics[width=0.6\textwidth]{images/rnli_college.jpg}
 \captionof{figure} {Training facility where crew members train lifesaving skills}
 \label{college}
 \hfill \break
-\end{center}
+\end{minipage}
 
 
 Scenario-based training is similarly difficult to implement, because of the hazardous nature and potentially high cost of the scenarios for which a crew member must trained. Most notable of which is capsize training, an actual situation where a vessel capsizes will almost always be in terrible weather conditions, and sea state. But, unfortunately, the only way in which to replicate this in practice is by artificially capsizing a specifically designed vessel in a large pool or safe waters. Thus, an alternate method for which to replicate these situations would be invaluable not only the RNLI, but to all organisations which require training which is impractically hazardous or costly to conduct effectively. 
@@ -147,18 +148,20 @@ Finally, interactivity is an attribute of virtual environments which may contrib
 The topic of spatial cognition is one without concrete conclusions. The way in which spatial information is gathered from some environment, and how it is organised within the brain is not concretely known, as is the way in which that information is recalled. It is evident that it is not simply a visual process, and many other sensory modalities are utilised; of particular importance to this study is the effect of motor activity and visual information. 
 
 As discussed, the attributes of a virtual environment which may effect spatial cognition or illustrated in Figure \ref{flow}.
-\begin{center}
+\begin{minipage}{\textwidth}
 \hfill \break
+\centering
 \includegraphics[width=0.45\textwidth]{images/spatial_cognition_flow.png}
 \captionof{figure}{Diagram illustrating the relationship between attributes of a virtual environment and their effect on spatial cognition}
 \label{flow}
 \hfill \break
-\end{center}
+\end{minipage}
 
 The lack of concrete evidence to support the effect of interactivity, fidelity, and presence on spatial cognition, is illustrated.  Thus, these attributes are the focal point of this study; the research questions stated in section \ref{research} can be refined to:
 
 \textit{To what extent do Interactivity, Fidelity, and Presence effect spatial cognition in a Virtual Environment?}
 
+% Discuss Context!!!
 
 \section{Approaches}
 
@@ -190,13 +193,14 @@ Later units crew members must complete is patch knowledge, this unit is part of 
 \subsection{Boat Layout}
 The application trains the user to have spatial awareness aboard the D-Class Inshore Lifeboat shown in Figure \ref{dclass}. The D-Class has a total of 9 compartments, a \textit{pod}, and a 40HP outboard engine. Each compartment consists of various emergency equipment; such as, towlines, first aid kits, survivor's Life jacket etc. The \textit{pod} is the housing for the navigational and communications equipment. In order for a crew member to successfully pass the \textit{boat layout} unit, they must be able to recall each item and its use; i.e. they must have acquired a sufficient level of landmark knowledge aboard the vessel. 
 
-\begin{center}
+\begin{minipage}{\textwidth}
 \hfill \break
+\centering
 \includegraphics[width=0.45\textwidth]{images/d-class}
 \captionof{figure}{Image of the D-Class Lifeboat at sea.}
 \label{dclass}
 \hfill \break
-\end{center}
+\end{minipage}
 
 The application allows a user to experience being a board the D-Class. In the 360 environment, the user is able to explore actual footage aboard the D-Class, and on the command of the user, each compartment is opened and the contents are shown to the user. In the VR environment, the user is able to actively explore the vessel at their own will. Opening compartment as they please, and interacting with objects within each compartment. 
 
@@ -220,34 +224,38 @@ A crucial factor of any virtual environment is scale. In this case, it was impor
 
 The vast majority of elements in the D-Class model can be constructed using the polygonal primitives. These primitives are enough to construct highly complex models, if used in conjunction with soft selection, and smoothing.
 
-\begin{center}
+\begin{minipage}{\textwidth}
 \hfill \break
+\centering
 \includegraphics[width=0.6\textwidth]{images/image_planes}
 \captionof{figure}{Screenshot of image planes overlaid onto the 3D model, shown in perspective view}
 \label{image-plane}
 \hfill \break
-\end{center}
+\end{minipage}
 
-\begin{center}
+\begin{minipage}{\textwidth}
 \hfill \break
+\centering
 \includegraphics[width=0.6\textwidth]{images/top_model}
 \captionof{figure}{Screenshot of final model of D-Class lifeboat}
 \label{model}
 \hfill \break
-\end{center}
+\end{minipage}
 
-% Could add images of all nine objects
+% Add discussion about constructing all nine objects + images of all nine objects
+
 
 \subsubsection{Unity}
 Importing the Maya model into Unity is easy. A particularly useful workflow is saving from Maya directly into the Unity assets folder, thus all changes in the Maya file are changed within Unity on save. In order to make the model interact with the environment and to raycasts simple collider primitives are positioned over the model. Although the environment is static, in order for the reticle from the Google Daydream controller to be usable this is a necessity.  
 
-\begin{center}
+\begin{minipage}{\textwidth}
 \hfill \break
+\centering
 \includegraphics[width=0.6\textwidth]{images/model_unity}
 \captionof{figure}{Screenshot of final model of D-Class lifeboat after importing to Unity. UI Labels are also shown.}
 \label{model}
 \hfill \break
-\end{center}
+\end{minipage}
 
 \subsection{360-Image Environment}
 The second application which was constructed was an interactive real world environment. This utilises 360-degree images from the actual environment. Users are then able to use the UI elements to explore this environment, and the objects within it. 
@@ -255,13 +263,14 @@ The second application which was constructed was an interactive real world envir
 \subsubsection{Samsung Gear 360}
 There are many modern cameras which are designed specifically for capturing 360-degree images and video. In this project, the Samsung Gear 360 device was used. Images were captured using a tripod. These images are then imported and stitched using the Gear360 application, and these images are then immediately usable within Unity. An important note to make in order to reduce any need for post processing, is that all images should be take with the same rotation. This ensures that a users orientation within the environment is consistent throughout exploration. 
 
-\begin{center}
+\begin{minipage}{\textwidth}
 \hfill \break
+\centering
 \includegraphics[width=0.8\textwidth]{images/centre}
 \captionof{figure}{Image taken on Samsung Gear 360. This is the Central image used in 360-image environment.}
 \label{model}
 \hfill \break
-\end{center}
+\end{minipage}
 
 \subsubsection{Unity}
 Unity makes constructing 360-degree environments trivial. As detailed in a Unity blog post in 2017 \footnote{How to integrate 360 video or images with Unity \url{https://blogs.unity3d.com/2017/07/27/how-to-integrate-360-video-with-unity/}}: 
@@ -274,7 +283,7 @@ Unity makes constructing 360-degree environments trivial. As detailed in a Unity
 
 Using the steps above it becomes simple to construct an environment within Unity which places a user within a 360-environment. Now, in order to allow a user to explore an environment there simply needs to be a material for each 360-image, which is changed to according to user input. For example, if a user would like to see inside a container, the user can click that container, then the material of the sphere changes to an image with a close up view of the open container. This creates the illusion that a user is moving around a scene. 
 
-\section{Google VR and Scene Interaction}
+\section{Google VR, Scene Interaction, and Deployment}
 During the development phase and early testing, it was concluded that it was disorienting to have transformation within the 360-video scene, and thus it was concluded that the 360-image environment would use static images. In order to maintain consistency it was concluded that the CG environmnet would need to also have a statically positioned camera; although both environments would obviously allow rotational camera movement.  
 
 \subsection{Google VR}\label{googlevr}
@@ -288,13 +297,13 @@ The elements which a user interacts with in the 360-image environment are UI lab
 
 \begin{center}
     \centering
-    \begin{minipage}{0.45\textwidth}
+    \begin{minipage}{0.6\textwidth}
         \centering
         \includegraphics[width=1\textwidth]{images/360-labels.png}
         \captionof{figure}{Screenshot of UI Labels overlaid onto 360-image in Unity.}
         \label{360-labels}
     \end{minipage}\hfill
-    \begin{minipage}{0.45\textwidth}
+    \begin{minipage}{0.35\textwidth}
         \centering
         \includegraphics[width=1\textwidth]{images/360-event-component.png}
         \captionof{figure}{Screenshot of the Event Trigger component attached to each UI label in the 360-environment.}
@@ -329,15 +338,41 @@ In the computer-generated environment it is the objects themselves, or the hatch
 \end{center}
 
 
-To animate the hatches, or objects themselves, each animated object has an animator component with a controller as shown in Figure \ref{animator}.
+To animate the hatches, or objects themselves, each animated object has an animator component with a controller as shown in Figure \ref{animator}. To animate these objects when a user clicks the controller, the \lstinline{PerformRaycast} function is the \lstinline{GvrPointerPhysicsRaycaster} script is appended to contain the code snippet in Figure \ref{anim_script}. All animated objects have a tag of \lstinline{"Bag"} and a state of either 1 or 0 which indicates if that object is open or closed. 
 
+\begin{center}
+    \centering
+    \begin{minipage}{0.6\textwidth}
+    \begin{lstlisting}
+	if (item.tag == "Bag" && item.GetComponent<State> ().state == 0) {
+		if (trigger) {
+			anim = item.GetComponent<Animator> ();
+			anim.Play ("open_bag");
+			item.GetComponent<State> ().state = 1;
+		}
+	}	
+	else if (item.tag == "Bag" && item.GetComponent<State> ().state == 1) {
+		if (trigger) {
+			anim = item.GetComponent<Animator> ();
+			anim.Play ("close_bag");
+			item.GetComponent<State> ().state = 0;
+		} 
+	}
 
+    \end{lstlisting}
+    \captionof{figure}{Code snippet for playing animation of object.}
+    \label{anim_script}
+    \end{minipage}\hfill
+    \begin{minipage}{0.35\textwidth}
+        \centering
+        \includegraphics[width=1\textwidth]{images/animator.png}
+        \captionof{figure}{Screenshot of the animator component attached to each animated object in the CG-environment.}
+        \label{animator}
+    \end{minipage}
+\end{center}
 
-
-
-
-
-% WAY MORE TO SAY
+\subsection{Deployment}
+Unity offers the ideal environment to build directly to Android. This is done by installing the Android SDK, setting the XR Settings in Player Settings to Google Daydream, then building to the Android Platform. 
 
 
 \section{Memory Test}
@@ -345,6 +380,8 @@ In order to allow users to complete the memory test, and submit their results re
 
 \subsection{Site Overview}
 The only requirement of the site is that a user can complete the memory test and submit their results. To ensure that any submitted results are verified that they have come from a specific user, a user must first have to sign in. Once a user has signed in. Once a user has signed in, their results must be submitted to and stored in a database, along with their user id. To enable the use of the following APIs within a static website the JavaScript tool Browserify was used. This tool bundles all dependencies into a single \lstinline{bundle.js} file.  
+
+\subsection{Web Technologies}
 
 \subsubsection{Google OAuth}
 Using Google OAuth, a site can have authentication and sign in functionality. Google's API uses the OAuth 2.0 protocol to authenticate and authorise. Using this API, a button is placed within the site which a user uses to sign in. After a user is signed in, the API returns that user's email address. This email address is then sent with the user's results on submission. Google's API returns a \lstinline{googleUser} object, from which the user's email can be retrieved and stored. 
@@ -370,7 +407,22 @@ function saveMessage(email, right, wrong) {
 };
 \end{lstlisting}
 
+% Screenshots of site, discuss css styling etc.
 
+
+\subsection{Web Design}
+Since the site was designed to have a single user flow, the only design decision that was to be made was how the question were to be presented to the user. Following the general structure of the memory test outlined by CANTAB's library of cognitive tests - which is discussed further in Subsection \ref{cantab} - each question must be presented one by one; the user can only proceed if they answer correctly. This is done by simply having hidden HTML elements, which are set to visible in the order that they exist in the HTML file. Using the class name \lstinline{question} for every question means that the element selector \lstinline{document.getElementsByClassName('question');} will return an array of all questions. Now, on a correct answer, we can set the current question to the css display \lstinline{hidden} and set the next question to \lstinline{block}.
+\\
+\begin{lstlisting}
+window.Right = function() {
+  sections = document.getElementsByClassName('question');
+  sections[question].style.display = 'none';
+  question++;
+  sections[question].style.display = 'block';
+};
+\end{lstlisting}
+
+The second requirement of this site is that it should be usable on mobile. Modern CSS functionality makes this task trivial for a static site. Using only the \lstinline{rem} unit of measurement ensures that all elements are scaled and positioned relative to the size of the viewing device. It is important to ensure the use of the meta tag \lstinline{<meta name="viewport" content="width=device-width, initial-scale=1"/>} to correctly scale to smaller devices. 
 
 \section{Usability Analysis}
 Issues:
@@ -416,7 +468,7 @@ Although, a significant difference between the two environments is the overall c
 I hypothesise that the inherently reduced complexity, coupled with the stereoscopic vision will yield improved transfer of spatial awareness for users which experience the CG scene.
 
 
-\subsection{Method}
+\subsection{Method}\label{cantab}
 The subjects chosen for this study were chosen at random from individuals at the University of Bristol, with no prerequisites, in a Hallway testing manner. This lead to a consistent mix of individuals mostly in the demographic of students from age of 18-25. 20 subjects were tested, with 18 completing the week later memory test. Although there was little or no choice for test subjects, this group is a fair representation of the target audience of this training application, and importantly most students in this age range will have similar experience in video gaming, and thus should not effect the results in this small sample size. Although, there is a discussion to be had with regards to potential disparities between males and females participating in spatial memory studies. 
 
 In order to negate the effect of learning for participants, an in-between groups user study is the only option, although this unfortunately doubles the required sample size, and reduces the statistical power of  each user's results. 
@@ -426,13 +478,14 @@ In order to assess the spatial memory of a user, CANTAB's Library of cognitive t
 \subsection{Task}
 Users are placed in one of the two training environments. In each of these two environments, there are 9 labelled objects located in the scene. The user is able to interact with each object to the extent that they are able to click on the object, and their location changes to near the object. The user is given 2 minutes in order to memorize these objects. After 2 minutes, the user exits the environment, they then immediately complete a memory test for the location of each of the 9 objects in the scene. Their performance, namely error rate, is recorded. A week later, the study participant will once again complete an identical memory test, and again their performance is recorded. In the memory test, the user is presented with the layout the D-Class Lifeboat, with 9 potential locations. The user is informed that each of these locations contains exactly one item. Figure \ref{layout-diagram} shows the diagram the participants are shown. 
 
-\begin{center}
+\begin{minipage}{\textwidth}
 \hfill \break
+\centering
 \includegraphics[width=0.2\textwidth]{images/ilb_simple}
 \captionof{figure}{Diagram of the D-Class Lifeboat, with 9 locations illustrated}
 \label{layout-diagram}
 \hfill \break
-\end{center}
+\end{minipage}
 
 \section{Results}
 Below are the results of the user study.  
@@ -534,7 +587,7 @@ Thus, it is fair to conclude that the difference of stereoscopic vision had quit
 \section{Discussion}
 
 \subsection{Context}\label{context}
-The environment in which user's recall their training is crucial. In a study by \cite{godden} which trained participants above and below water, participants who were taught underwater better recalled that training when underwater, and vice versa. Thus, it would be fair to assume that although the CG led to less user errors in a neutral environment for recall, it is likely that the errors made by users from the 360-image environment would be reduced if they were to be recalled whilst actually on the vessel; since they had been trained in a seemingly identical environment. 
+The environment in which user's recall their training is crucial. In a study by \cite{godden} which trained participants above and below water, participants who were taught underwater better recalled that training when underwater, and vice versa. Thus, it would be fair to assume that although the CG led to less user errors in a neutral environment for recall, it is likely that the errors made by users from the 360-image environment would be reduced if they were to be recalled whilst actually on the vessel; since they had been trained in a seemingly identical environment.
 
 \section{Conclusion}
 The aim of this project was to conclude the most effective, and efficient way in which the RNLI could train inexperienced crew members. As a proof of concept, of a means for which to train crew members without the cost associated with typical simulator environments, this project was successful. The most time consuming element of the application is the construction of 3D Models. Since the RNLI fleet is actually decreasing in diversity, with most stations receiving D-Class, B-Class, Shannon, or Tamar Lifeboats, it is not a monumental task to construct these, and these vessels need only be constructed once. All other aspects of this application are affordable, with the Google Daydream headset costing only RRP £99.99 \footnote{Google Daydream View \url{https://store.google.com/gb/product/google_daydream_view}}. This would be the only cost which each station would need to pay in order to access the application.
@@ -553,17 +606,22 @@ Further study into the training capabilities of potential virtual environment ha
 
 Testing patch knowledge requires the user to travel around a small geographical area, i.e. New Quay Harbour - shown in Figure \ref{nq}. This area consists of multiple landmarks and hazards, such as piers, beaches, boats, and rocks. The user must remember these landmarks, and be able to travel between them, utilising their landmark, route, and survey knowledge acquired of the area. 
 
-\begin{center}
+\begin{minipage}{\textwidth}
 \hfill \break
-\includegraphics[width=0.45\textwidth]{images/new_quay}
+\centering
+\includegraphics[width=0.4\textwidth]{images/new_quay}
 \captionof{figure}{New Quay Harbour, West Wales}
 \label{nq}
 \hfill \break
-\end{center}
+\end{minipage}}
 
-% Stereoscopic vision
-% Interactivity
-% Context
+
+
+\begin{appendices}
+\chapter{Interviews}
+\section{Participant A}
+\section{Participant B}
+\end{appendices}
 
 \clearpage
 \bibliography{bib.bib}
