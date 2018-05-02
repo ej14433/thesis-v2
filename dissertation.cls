@@ -76,7 +76,7 @@
 
 % configure hyperref
 
-\hypersetup{colorlinks=true,bookmarks=false,urlcolor=red}
+\hypersetup{colorlinks=false,bookmarks=false,urlcolor=red}
 
 % configure algorithm2e
 
@@ -95,7 +95,7 @@
 
 % configure style of bibliography
 
-\bibliographystyle{plain}
+\bibliographystyle{agsm}
 
 % configure style of pages
 
@@ -144,7 +144,7 @@
                               \vspace*{2.0cm}
   \mbox{\IfEq{\dissertation@title@major}{}{}{\LARGE \dissertation@title@major}} \\
                               \vspace*{0.5cm}
-  \mbox{\IfEq{\dissertation@title@minor}{}{}{\Large \dissertation@title@minor}} \\
+  \mbox{\IfEq{\dissertation@title@minor}{}{}{\LARGE \dissertation@title@minor}} \\
                               \vspace*{1.0cm}
                           {\Large \dissertation@author}                         \\
 
