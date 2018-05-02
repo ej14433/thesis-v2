@@ -1,6 +1,18 @@
-
-\documentclass[a4paper, openright, twoside]{book}
-
+\documentclass[ % the name of the author
+                    author={Elis Jones},
+                % the name of the supervisor
+                supervisor={Dr. Kirsten Cater},
+                % the degree programme
+                    degree={BSc},
+                % the dissertation    title (which cannot be blank)
+                     title={The Effect of Presentation Medium on Spatial Cognition},
+                % the dissertation subtitle (which can    be blank)
+                  subtitle={in the Virtual Environment},
+                % the dissertation     type
+                %  type={enterprise},
+                % the year of submission
+                      year={2018} ]{dissertation}
+                
 %% Language and font encodings
 \usepackage[english]{babel}
 \usepackage[utf8x]{inputenc}
@@ -61,12 +73,18 @@
 
 \parskip 4mm
 
-\title{The Effect of Presentation Medium on Spatial Cognition in Virtual Environments}
-\author{Elis Jones}
-
 \begin{document}
+
+\iffalse
+\section*{Prelude}
+\thispagestyle{empty}
+\fi
 \maketitle
 \frontmatter
+\makedecl
+
+
+
 \tableofcontents{}
 
 \chapter*{Abstract}
@@ -74,18 +92,21 @@ The purpose of this study is to utilise the recent opportunities to construct mo
 
 \mainmatter
 \chapter{Introduction, and Background}\label{intro_chapter}
-
+\section{Background}
 \subsection{Royal National Lifeboat Institution}
-The Royal National Lifeboat Institution - RNLI - is a charity which save lives at sea. It is based in UK, Republic of Ireland, and the Channel Islands. In 2016, their crews and lifeguards saved 558 lives, with 8,851 emergency launches. Operating 238 lifeboat stations, and patrolling 240 beaches cost the institution £168.1M in 2015\footnote{RNLI: Where yours money goes \url{https://goo.gl/UjACQK}}. The cost of training a single lifeguard is £673, with the cost of a lifeboat crew member being considerably higher. \footnote{ RNLI Annual Reports and Accounts\url{https://goo.gl/XqhCZn}} 
+The Royal National Lifeboat Institution - RNLI - is a charity which save lives at sea. It is based in UK, Republic of Ireland, and the Channel Islands. In 2016, their crews and lifeguards saved 558 lives, with 8,851 emergency launches. Operating 238 lifeboat stations, and patrolling 240 beaches cost the institution £168.1M in 2015\footnote{RNLI: Where yours money goes \url{https://goo.gl/UjACQK}}. The cost of training a single lifeguard is £673, with the cost of a lifeboat crew member being considerably higher. \footnote{ RNLI Annual Reports and Accounts \url{https://goo.gl/XqhCZn}} 
 
 
 
 \subsection{RNLI Training} \label{rnli_training}
 The RNLI recruits and trains volunteers in order to save lives at sea. By the voluntary nature of recruits, it is not - and can not - be a requirement that a person has maritime experience prior to recruitment. Thus, the RNLI has a robust structure for crew development. Training consists of both theoretical training in a classroom, and sea-based, practical training.
 
-The current format of training at the RNLI is that each crew member follows a structured training programme. This programme consists of multiple competence based training units, which cover an agreed range of skills required to complete a task. \footnote{RNLI: Lifeboat crew training \url{https://goo.gl/kuCafE}}. Each unit consists of a classroom theory element, and a practical element. 
+The current format of training at the RNLI is that each crew member follows a structured training programme. This programme consists of multiple competence based training units, which cover an agreed range of skills required to complete a task. \footnote{RNLI: Lifeboat crew training \url{https://goo.gl/kuCafE}}. Each unit consists of a classroom theory element, and a practical element. For example, the first unit that a recently joined member of crew must complete is PPE, for which they are assessed on their knowledge Personal Protective Equipment; this includes Helmet, Lifejacket, Flares, Personal Location Beacon, Harness, Dry Suit, Spray Hood, Whistle, and a Light. If a crew member is able to recall and describe each of these items and their function, they pass the unit and become eligible for assessment for the next unit - typically Boat Layout. 
 
-To bridge this divide between theory and practice, all crew must attend a 1-week training course at the RNLI College in Poole. During this week, crew receive practical training in a specifically built facility- shown in Figure \ref{college}; this training ranges from fire fighting, capsize drills, and sea survival. This process is expensive, but absolutely crucial to the safe functioning of Lifeboat stations. Due to the turnover of voluntary crew members, which increases the average costs of a fully trained crew member, It is not possible to frequently train crew in this manner. 
+Later units - such as Navigation - entail elements of both dry training (i.e. training on land) and wet training (i.e. training at sea). In order to pass the Navigation unit, a crew member must demonstrate their theoretical knowledge in a classroom test environment; for example, plotting co-ordinates on a map. The crew member will then be required to demonstrate their practical knowledge of the navigational equipment whilst aboard the vessel. 
+For the previously described units, and for many similar units, the current training format is perfectly suitable for the training of inexperienced crew members. Since there is no inherent hazard or significant cost, to train an crew member to become competent at these tasks. This is not the case for all units. Units such as boat handling, sea survival, and capsize training - and many others - can become hazardous environments for inexperienced crew. This is due to the divide between theoretical training, and practical training. 
+
+The current solution which the RNLI employs to bridge this divide between theory and practice is that all crew must attend a 1-week training course at the RNLI College in Poole. During this week, crew receive practical training in a specifically built facility- shown in Figure \ref{college}; this training ranges through fire fighting, capsize drills, and sea survival. This process is expensive, but absolutely crucial to the safe functioning of Lifeboat stations. Due to the turnover of voluntary crew members, which increases the average costs of a fully trained crew member, It is not possible to frequently train crew in this manner. 
 
 \begin{minipage}{\textwidth}
 \centering
@@ -96,14 +117,14 @@ To bridge this divide between theory and practice, all crew must attend a 1-week
 \end{minipage}
 
 
-Scenario-based training is similarly difficult to implement, because of the hazardous nature and potentially high cost of the scenarios for which a crew member must trained. Most notable of which is capsize training, an actual situation where a vessel capsizes will almost always be in terrible weather conditions, and sea state. But, unfortunately, the only way in which to replicate this in practice is by artificially capsizing a specifically designed vessel in a large pool or safe waters. Thus, an alternate method for which to replicate these situations would be invaluable not only the RNLI, but to all organisations which require training which is impractically hazardous or costly to conduct effectively. 
+Scenario-based training is difficult to implement, because of the hazardous nature and potentially high cost of the scenarios for which a crew member must trained. Most notable of which is capsize training, an actual situation where a vessel capsizes will almost always be in terrible weather conditions, and sea state. But, unfortunately, the only way in which to replicate this in practice is by artificially capsizing a specifically designed vessel in a large pool or safe waters. This method is costly. Thus, an alternate method for which to replicate these situations would be invaluable not only the RNLI, but to all organisations which require training which is impractically hazardous or costly to conduct effectively. 
 
 \subsection{Technological Progress} \label{tech_progress}
 The persistent march of technological innovation and progress present opportunities in every  industry, this is similarly true for practical training. Digitally simulated training environments are widely used, with the military and commercial aviation industries being the biggest investors. Training environments can be recreated in 3D as a simulator, allowing a user to be trained through a digital environment. 3D Simulators are not a new concept, but the creation of complex 3D applications has become considerably more accessible in recent years using free-to-use platforms such as Unity3D and Unreal Engine, and the ever increasing computational power of electrical devices. 
 
-Of specific interest in this project is the more recent progress of Virtual Reality - VR - devices. This trend began with the development of the Oculus Rift - which was later purchased by Facebook. As with most innovations, the Oculus Rift is no longer the best selling headset, being replaced by the HTC Vive \footnote{HTC Vive Outselling Oculus Rift 2-to-1 \url{https://goo.gl/SfqrM2}} many other tech giants have released similar devices, such as the Samsung Gear VR, Google Cardboard, Playstation VR. With a fierce competition to capture a large share of a young market, pricing of high quality VR devices are falling year on year. Many VR devices - such as the Cardboard and Gear - take advantage of the power of modern high end smartphones. 
+Of specific interest in this project is the more recent progress of Virtual Reality - VR - devices. This trend was reinvigorated by the development of the Oculus Rift - which was later purchased by Facebook \footnote{Facebook acquire Oculus \url{https://www.facebook.com/zuck/posts/10101319050523971}}. As with most innovations, the Oculus Rift is no longer the best selling headset, being replaced by the HTC Vive \footnote{HTC Vive Outselling Oculus Rift 2-to-1 \url{https://goo.gl/SfqrM2}} many other tech giants have released similar devices, such as the Samsung Gear VR, Google Cardboard, Playstation VR. With a fierce competition to capture a large share of a young market, pricing of high quality VR devices are falling year on year. Many VR devices - such as the Cardboard and Gear - take advantage of the power of modern high end smartphones. 
 
-Creating 360-degree images and videos is now possible from most mobile devices, this can be done by stitching multiple images of a single scene together, in order to create a full image. Such methods construct a static 2D image, which can be interactively explored by a user. Dedicated cameras are becoming more widely available, utilising mutliple omnidirectional cameras which capture video and automatically . The increased demand for 360-video lead to the largest video viewing platforms, YouTube and Facebook, both launching a feature in 2015 which allowed viewers to watch and interact with such videos \footnote{Facebook joins YouTube in showing 360-degree videos – including Star Wars \url{https://goo.gl/H9iE6f}}. 
+Creating 360-degree images and videos is now possible from most mobile devices, this can be done by stitching multiple images of a single scene together, in order to create a full image. Such methods construct a static 2D image, which can be interactively explored by a user. Dedicated cameras are becoming more widely available, utilising multiple omnidirectional cameras which capture video and automatically . The increased demand for 360-video lead to the largest video viewing platforms, YouTube and Facebook, both launching a feature in 2015 which allowed viewers to watch and interact with such videos \footnote{Facebook joins YouTube in showing 360-degree videos – including Star Wars \url{https://goo.gl/H9iE6f}}. 
 
 In a similar manner to 360 photography, adoption of VR technologies has been rapidly increasing in recent years. With Facebook acquiring the VR company Oculus in 2014 \footnote{Facebook closes its \$2bn Oculus Rift acquisition. What next? \url{https://goo.gl/UQSTsP}}, and Google releasing its own VR interface for smartphones in the same year \footnote{Google Cardboard launches in UK for £15 \url{https://goo.gl/f9CS8f}}.  
 
@@ -116,14 +137,20 @@ A computer generated - CG, virtual reality - VR, implementation of this seems li
 
 The two available approaches - VR and 360-video - offer clear virtual benefits: VR allows a user to interact and manipulate a scene, and is dynamic; 360-video offers a photo-realistic representation of a scene. But, there are also economic factors which must be considered: VR requires software development expertise, therefore time and funding; 360-video can be created quickly, with relatively cheap equipment. Both require sufficient hardware, i.e. VR headsets, and computer systems or high-end mobile devices.  Hardware costs have been rapidly decreasing and can be expected to continue to do so. 
 
-\subsection{Research Questions}\label{research} 
-From the above discussion, it is possible to determine the following research questions:
-\hfill \break
-\textit{Which technological approach is the most efficient method of training crew members?}
-\hfill \break
-\textit{What are the causes of any disparity between approaches?}
-\hfill \break
+\subsection{Summary}
+In summary, modern technology offers opportunities to improve the way that the RNLI - and similar organisations - train their inexperienced recruits. But the broad list of available technologies to do this, reveal new opportunities to construct non-optimal solutions to these issues. By virtue of the broad scope of solutions, some effort must be made to research the most effective of them. This project will aim to clarify some elements of this. This leads in to the following questions:
+
+\begin{itemize}
+    \item \textit{Which technological approach, if any, is the most effective way in for the RNLI to train crew members?}
+    \item \textit{What causes any disparity between these approaches?}
+\end{itemize}
+
 Thus, it is necessary to quantify the functional differences between these two approaches in the training of crew members. To do so, the current understanding of the field of psychology for practical training must be explored.
+
+\section{Literature Review}
+
+\subsection{Training in the Virtual Environment}
+
 
 \subsection{Spatial Cognition}
 According to \cite{stone}, the term spatial awareness can be applied to the immediate environment in which one exists or to a remote environment in which an extension of oneself has been deployed, such as a remotely operated vehicle or manipulator, or a virtual environment. 
@@ -166,7 +193,7 @@ The lack of concrete evidence to support the effect of interactivity, fidelity, 
 \section{Approaches}
 
 \subsection{Technology}
-Modern technology offers two methods to place trainees in interactive virtual environments, 360-degree imaging, and computer-generated virtual reality; although 360-degree video is often disputed to be a form of VR \footnote{STOP CALLING GOOGLE CARDBOARD'S 360-DEGREE VIDEOS VR \url{https://goo.gl/UGthLf}}, the two technologies will be referred to as 360 and VR for simplicity.
+Modern technology offers two methods to place trainees in interactive virtual environments, 360-degree imaging, and computer-generated virtual reality; although 360-degree video is often disputed to be a form of VR \footnote{STOP CALLING GOOGLE CARDBOARD'S 360-DEGREE VIDEOS VR \url{https://goo.gl/UGthLf}}, the two technologies will be referred to as 360 and CG for simplicity.
 
 \subsubsection{360 Imaging}
 The RNLI has experimented with 360-imaging in the past, creating a tour of their new Shannon-class All-weather Lifeboat \footnote{RNLI VR Tour, for Cardboard \url{https://goo.gl/1Ha6vs}}. This application allows a user to explore a series of 360 images from within the vessel. In this instance, the fidelity of the environment is high, as it is photo realistic; which has been proven to be crucial for training. This application also offers some level of interactivity, which may be moderately effective in the training of crew members. Although, according to previous studies interactivity, and active exploration may be essential to effective training. Finally, since this application only uses static images, it is very difficult to give the user a sense of presence, which may be important in the performance of users within the VE - as studied by \cite{coxon}.
@@ -206,14 +233,17 @@ The application allows a user to experience being a board the D-Class. In the 36
 
 \chapter{Development}
 
+\section{Application Overview}
+The requirements for this application were to construct two environments within which users are able to explore. Crucially, these applications should be interacted with in the same way and use the same hardware, in order to not introduce uncontrolled variables to the study. Additionally, in order to avoid motion sickness in users both environments will not allow for continuous adjustment of location in the environment. Thus, users will only be able to move discretely throughout the scene by selecting locations they which to move to. 
+
+At this point it is valuable to summarise the intended outcome of this project, including potential further work that could follow this project. From this summary, a concise requirements summary can be constructed. 
+
+Broadly, the intention of this project is to construct virtual training environment in order to train crew members on RNLI Lifeboats. As discussed in Section \ref{tech_progress} there has been significant progress in the field of immersive virtual reality environments. 
+
 \section{Technical Overview}
 As indicated in Chapter \ref{intro_chapter} a crucial aspect of each of the environments, is that they can be constructed using modern, affordable, and easily accessible tools. As such, it is an easy decision to utilise the Unity3D game development platform. In conjunction with the use of Unity3D, Google offers a fantastic library for development on their Google Cardboard and Daydream platforms. In order to construct the 3D Model of the D-Class, the 3D modelling and animation software Maya is used. 
 
 In order to collect memory test results remotely for users, Github Pages was also utilised, which is a free platform on which to host static websites. Data storage, and user information was handled by the Google APIs Firebase, and OAuth2.
-
-\section{Application Overview}
-The requirements for this application were to construct two environments within which users are able to explore. Crucially, these applications should be interacted with in the same way and use the same hardware, in order to not introduce uncontrolled variables to the study. Additionally, in order to avoid motion sickness in users both environments will not allow for continuous adjustment of location in the environment. Thus, users will only be able to move discretely throughout the scene by selecting locations they which to move to. 
-
 
 \section{Computer-Generated Environment}
 \subsection{Modelling}
@@ -747,7 +777,7 @@ Testing patch knowledge requires the user to travel around a small geographical 
 \hfill \break
 \end{minipage}
 
-
+\backmatter
 
 \begin{appendices}
 \chapter{Interviews}
