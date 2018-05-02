@@ -390,8 +390,8 @@ There are many modern cameras which are designed specifically for capturing 360-
 \begin{minipage}{\textwidth}
 \hfill \break
 \centering
-\includegraphics[width=0.8\textwidth]{images/gloves2}
-\captionof{figure}{Image taken on Samsung Gear 360. This is the image used to inspect the gloves item, it is used in 360-image environment.}
+\includegraphics[width=0.8\textwidth]{images/firstaid2}
+\captionof{figure}{Image taken on Samsung Gear 360. This is the image used to inspect the first aid item, it is used in 360-image environment.}
 \label{model}
 \hfill \break
 \end{minipage}
@@ -511,16 +511,20 @@ The only requirement of the site is that a user can complete the memory test and
 \subsubsection{Google OAuth}
 Using Google OAuth, a site can have authentication and sign in functionality. Google's API uses the OAuth 2.0 protocol to authenticate and authorise. Using this API, a button is placed within the site which a user uses to sign in. After a user is signed in, the API returns that user's email address. This email address is then sent with the user's results on submission. Google's API returns a \lstinline{googleUser} object, from which the user's email can be retrieved and stored. 
 \\
+\begin{minipage}{\textwidth}
 \begin{lstlisting}
 window.onSignIn = function(googleUser) {
   var profile = googleUser.getBasicProfile();
   var email   = profile.getEmail();
 }
 \end{lstlisting}
+\end{minipage}
+
 
 \subsubsection{Firebase Database}
 Due to the static nature of the site, there is no server-side code, thus it is non-trivial to construct a secure database to store the submissions from the user study. The solution chosen for this application is Firebase Realtime Database \footnote{Firebase Realtime Database \url{https://firebase.google.com/docs/database/}}. This is a NoSQL cloud database. All data within this database is stored as JSON. Once a user has completed their test, they click the submit button which calls \lstinline{saveMessage} as shown below.
 \\
+\begin{minipage}{\textwidth}
 \begin{lstlisting}
 function saveMessage(email, right, wrong) {
   var newResponseRef = ref.push();
@@ -531,6 +535,7 @@ function saveMessage(email, right, wrong) {
   });
 };
 \end{lstlisting}
+\end{minipage}
 
 % Screenshots of site, discuss css styling etc.
 
@@ -538,6 +543,7 @@ function saveMessage(email, right, wrong) {
 \subsection{Web Design}
 Since the site was designed to have a single user flow, the only design decision that was to be made was how the question were to be presented to the user. Following the general structure of the memory test outlined by CANTAB's library of cognitive tests - which is discussed further in Subsection \ref{cantab} - each question must be presented one by one; the user can only proceed if they answer correctly. This is done by simply having hidden HTML elements, which are set to visible in the order that they exist in the HTML file. Using the class name \lstinline{question} for every question means that the element selector \lstinline{document.getElementsByClassName('question');} will return an array of all questions. Now, on a correct answer, we can set the current question to the css display \lstinline{hidden} and set the next question to \lstinline{block}.
 \\
+\begin{minipage}{\textwidth}
 \begin{lstlisting}
 window.Right = function() {
   sections = document.getElementsByClassName('question');
@@ -546,6 +552,7 @@ window.Right = function() {
   sections[question].style.display = 'block';
 };
 \end{lstlisting}
+\end{minipage}
 
 The second requirement of this site is that it should be usable on mobile. Modern CSS functionality makes this task trivial for a static site. Using only the \lstinline{rem} unit of measurement ensures that all elements are scaled and positioned relative to the size of the viewing device. It is important to ensure the use of the meta tag \lstinline{<meta name="viewport" content="width=device-width, initial-scale=1"/>} to correctly scale to smaller devices. 
 
