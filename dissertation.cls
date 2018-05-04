@@ -60,9 +60,10 @@
 % http://www.ctan.org/tex-archive/macros/latex/contrib/xstring
 \RequirePackage{xstring}
 % http://www.ctan.org/tex-archive/macros/latex/contrib/url
-\RequirePackage{url}
+% \RequirePackage{url}
 % http://www.ctan.org/tex-archive/macros/latex/contrib/hyperref
-\RequirePackage{hyperref}
+% \RequirePackage{hyperref}
+\PassOptionsToPackage{hyphens}{url}\usepackage{hyperref}
 % http://www.ctan.org/tex-archive/macros/latex/contrib/lipsum
 \RequirePackage{lipsum}
 % http://www.ctan.org/tex-archive/usergrps/dante/dtk
