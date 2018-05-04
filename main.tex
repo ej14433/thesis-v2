@@ -233,26 +233,35 @@ In conjunction with the requirement of consistency between environments, it is n
 
 \begin{minipage}{\textwidth}
 \centering
-\includegraphics[width=0.6\textwidth]{images/rnli_college.jpg}
-\captionof{figure} {Training facility where crew members train lifesaving skills}
+\includegraphics[width=0.6\textwidth]{images/headmounted.jpg}
+\captionof{figure} {Head-mounted display. Device shown is the Samsung Gear VR.}
 \label{headmounted}
 \hfill \break
 \end{minipage}
 
-To maintain consistency, and reduce variables between each application, it will be important that both applications feel identical to the user - excluding interactivity and fidelity. To achieve this, both applications will utilise the same viewing  hardware. Notably, in practice, viewing a computer-generated VE environment requires far more sophisticated hardware, and is thus more complex and expensive to use. 
+Due to the thriving nature of the virtual reality market, there exists many options when it comes to selecting a device. In order to experience a simple scenario based training environment, it would be unnecessary to select high-end HMDs to do this. The cost of high-end HMDs do not truly demonstrate the cost associated with owning one. High-end HMDs require the use of similarly high-end computers, making the devices less affordable, and less accessible. The total cost of a HMD and VR-capable PC sitting at a minimum of £750 \footnote{VRHeads: What is the total cost of an HTC Vive \url{https://www.vrheads.com/what-total-cost-htc-vive}}. A final drawback to such devices is that they are tethered - i.e. they must be wired to a VR-capable PC. This means that crew would be unable to utilise these training devices outside of a designated training space, leading to much less flexiblity for training. 
 
-\subsubsection{Complexity}
-It is clear that the spatial cognition of a user in the VE is effected by the complexity of the task. A testing scenario of varying complexity and length must be utilised in order to ensure a robust study. Thus, the first requirement of the study is that it should consist o multiple stages ranging from simple to complex. 
-
-As described in section \ref{rnli_training}, crew members at the RNLI complete a series of competence based units as part of their training.  Within the RNLI, one of the first and most trivial training units a recruit completes is \textit{Boat Layout}. Knowledge of the location of a long list of equipment on a vessel is crucial; and the ability to immediately recall this information is invaluable. This test is the basis of the most trivial task a user completes during this study. 
-
-Later units crew members must complete is patch knowledge, this unit is part of the \textit{Helmsman}\footnote{A helmsman on an ILB is the most senior member of crew, and is responsible for steering the vessel.} plan. Patch knowledge is a helmsman's knowledge of the area in which they are required to cover; this requires the helmsman to have a well trained spatial knowledge of beaches, rocks, cliffs, caves etc. within that are. This is a crucial skill for any helmsman, in order for the Lifeboat to be able to attend any scene in a safe and prompt manner. Therefore, this unit is the basis of the second, more complex task a user completes during this study. 
+The alternative to such tethered, high-end HMDs are Mobile VR HMDs. Typically mobile HMDs utilise smartphone devices to display a virtual environment; although more recently, the Oculus Go was announced which does not follow this trend \footnote{Oculus Go \url{https://www.oculus.com/go/}}. These devices offer a perfect combination of accessibility, flexibility, and affordability. The only prerequisite for using the device is a modern smartphone, making the device accessible. The total cost of a dedicated VR experience would typically be £450, including a dedicated smartphone device \footnote{Amazon: Samsung S8 \url{https://www.amazon.co.uk/Samsung-SM-G950F-64GB-SIM-Free-Smartphone-Midnight-Black/dp/B06XYMCMHD/ref=sr_1_1?s=telephone&ie=UTF8&qid=1525428029&sr=1-1&keywords=samsung+s8}}\footnote{Google Store: Daydream View \url{https://store.google.com/gb/config/google_daydream_view}}. Following from this, a Mobile VR HMD will be the hardware used in this project.
 
 \section{Application Design}
-\subsection{Boat Layout}
-The application trains the user to have spatial awareness aboard the D-Class Inshore Lifeboat shown in Figure \ref{dclass}. The D-Class has a total of 9 compartments, a \textit{pod}, and a 40HP outboard engine. Each compartment consists of various emergency equipment; such as, towlines, first aid kits, survivor's Life jacket etc. The \textit{pod} is the housing for the navigational and communications equipment. In order for a crew member to successfully pass the \textit{boat layout} unit, they must be able to recall each item and its use; i.e. they must have acquired a sufficient level of landmark knowledge aboard the vessel. 
+This project aims to construct a proof-of-concept application which allows a user to reach a level of competence to pass a unit which they are assessed for. In addition to this, the application should enable a quantitative comparison to be made between the two methods of presentation; 360-imagery vs. computer-generated. To do this compromises must be taken which make the two applications more directly comparable. 
 
-\begin{minipage}{\textwidth}
+\subsection{Assessment Units}
+As discussed in Section \ref{rnli_training} the training programme of crew members at a RNLI Lifeboat station is composed of a series of competency based units, which they are assessed for. This training programme will take a new recruit from an inexperienced crew member to a fully capable coxswain - the most senior role of crew, who is responsible for managing crew on an ALB. 
+
+The first stage of a new recruits training programme involves training to a level where they are capable to go to sea without endangering themselves or other members of crew. This stage consists of only dry training - on land. The following units must be completed to reach this point:
+
+\begin{itemize}
+    \item Personal Protection Equipment
+    \item Roles and Responsibilities
+    \item Boat Layout
+    \item Medical Assessment
+\end{itemize}
+
+\subsection{Boat Layout}
+Boat layout is the assessment of a crew member's knowledge of the location, and function of every piece of equipment aboard the vessel which they will be a crew member for. This knowledge is crucial to the safety of any person aboard the vessel, and it is essential to the safe operation of the vessel. This project will focus on the most common vessel in the RNLI fleet, the D-Class IB1 type (shown in Figure \ref{dclass}), with 135 vessels in service across the country \footnote{RNLI: D-Class \url{https://rnli.org/what-we-do/lifeboats-and-stations/our-lifeboat-fleet/d-class-lifeboat}}. The equipment on the D-Class consists of over 20 different objects. 
+
+\begin{minipage}{\textwidth}\
 \hfill \break
 \centering
 \includegraphics[width=0.45\textwidth]{images/d-class}
@@ -261,16 +270,29 @@ The application trains the user to have spatial awareness aboard the D-Class Ins
 \hfill \break
 \end{minipage}
 
-The application allows a user to experience being a board the D-Class. In the 360 environment, the user is able to explore actual footage aboard the D-Class, and on the command of the user, each compartment is opened and the contents are shown to the user. In the VR environment, the user is able to actively explore the vessel at their own will. Opening compartment as they please, and interacting with objects within each compartment. 
+\subsection{Application}\label{application-approach}
+Boat layout is an appropriate unit to implement for training, as it allows for both a realistic approach to how the application could train a crew member. In addition, the effectiveness of this training would be  quantifiable, and thus a robust user study could be conducted with it. This application must enable a user to explore the D-Class, and inspect the equipment which is on board.
+
+Now that the unit for assessment has been chosen, it is necessary to decide the way in which user's will be assessed for their performance, so that an appropriate application can be constructed. In brief, the suer study will require users to recall the location of the items aboard the vessel - the design of the user study is discussed in detail in Chapter \ref{user-study-chapter}. In order to enable a fair user study to be conducted some compromises must be taken from the realism of the layout of the vessel. The number of items of equipment must be reduced, and in accordance to Miller's Law the most appropriate number of objects would be nine in this case \cite{Miller}. 
 
 \chapter{Development}
 
 \section{Application Overview}
 The requirements for this application were to construct two environments within which users are able to explore. Crucially, these applications should be interacted with in the same way and use the same hardware, in order to not introduce uncontrolled variables to the study. Additionally, in order to avoid motion sickness in users both environments will not allow for continuous adjustment of location in the environment. Thus, users will only be able to move discretely throughout the scene by selecting locations they which to move to. 
 
-At this point it is valuable to summarise the intended outcome of this project, including potential further work that could follow this project. From this summary, a concise requirements summary can be constructed. 
+Broadly, the intention of this project is to construct virtual training environment in order to train crew members on RNLI Lifeboats. As discussed in Section \ref{tech_progress} there has been significant progress in the field of immersive virtual reality environments. Specifically, this application will teach users the layout of the equipment aboard the vessel. As detailed in Section \ref{application-approach} the number of items the user will need to recall the location of will be nine. These nine items are as follows:
 
-Broadly, the intention of this project is to construct virtual training environment in order to train crew members on RNLI Lifeboats. As discussed in Section \ref{tech_progress} there has been significant progress in the field of immersive virtual reality environments. 
+\begin{itemize}
+    \item Anchor
+    \item Compass
+    \item First Aid Kit
+    \item Gloves
+    \item Handheld Radio
+    \item Light
+    \item Propeller
+    \item Tow Rope
+    \item VHF Radio
+\end{itemize}
 
 \section{Technical Overview}
 As indicated in Chapter \ref{intro_chapter} a crucial aspect of each of the environments, is that they can be constructed using modern, affordable, and easily accessible tools. As such, it is an easy decision to utilise the Unity3D game development platform. In conjunction with the use of Unity3D, Google offers a fantastic library for development on their Google Cardboard and Daydream platforms. In order to construct the 3D Model of the D-Class, the 3D modelling and animation software Maya is used. 
@@ -360,10 +382,19 @@ Each item is modelled using the same method of tracing over an image plane. The 
 The intricacy of some of these models means that it was not easy to use the simple polygonal primitives which are offered by Maya. Instead, the more sophisticated curves, and NURB surfaces needed to be used. Once constructed, these can be converted into polygonal meshes automatically by Maya, and then imported into the model of the entire vessel. In particular, the gloves required this technique. 
 
 \subsubsection{Gloves}
-Using Maya's powerful tools effectively can make formerly complex tasks much more manageable. In this case, Maya's curves, and NURB surfaces allows a user to create complex geometry quickly. The process for constructing the gloves item is as follows: create CV curve outlining desired shape; create a planar surface from this curve; convert this surface to a polygon; extrude the polygon; add divisions to smooth. This workflow is illustrated in Figure \ref{gloves}
+Using Maya's powerful tools effectively can make formerly complex tasks much more manageable. In this case, Maya's curves, and NURB surfaces allows a user to create complex geometry quickly. The process for constructing the gloves item is as follows: 
 
-\begin{minipage}{\textwidth}\label{gloves}
-\begin{center}
+\begin{itemize}
+    \item Create CV curve outlining the desired shape
+    \item Create a planar surface from this curve
+    \item Convert the surface to a polygon
+    \item Add divisions to smooth
+\end{itemize}
+
+This workflow is illustrated in Figure \ref{gloves}
+
+\begin{minipage}{\textwidth}
+    \begin{center}
     \centering
     \begin{minipage}{0.18\textwidth}
         \centering
@@ -388,12 +419,22 @@ Using Maya's powerful tools effectively can make formerly complex tasks much mor
     \end{minipage}\hfill
 \end{center}
 \captionof{figure}{Workflow used to construct the 3D model of the gloves item.}
+\label{gloves}
 \end{minipage}
 
 \subsubsection{Tow Rope}
-Another task that would have otherwise been complex was the construction of the tow rope model. An intricate spool of rope would be almost impossible to model manually. Soft selection is a tool which assisted in this, soft selection allows a user to select a vertex, edge, or face, then when moving that item nearby items are affected relative to the change of that item and their distance from it. The process for this model was: construct 2D curve, by tracing image plane of object; position polygonal face at end of rope; extrude polygon along rope; use soft selection to add third dimension to model.These steps are illustrated in Figure \ref{tow}
+Another task that would have otherwise been complex was the construction of the tow rope model. An intricate spool of rope would be almost impossible to model manually. Soft selection is a tool which assisted in this, soft selection allows a user to select a vertex, edge, or face, then when moving that item nearby items are affected relative to the change of that item and their distance from it. The process for this model was: 
 
-\begin{minipage}{\textwidth}\label{tow}
+\begin{itemize}
+    \item Construct 2D curve by tracing image plane of object
+    \item Position polygonal face at the end of the curve
+    \item Use soft selection, with a radius which extends the length of the rope, to add a third dimension to the model
+    \item Add divisions to smooth
+\end{itemize}
+
+These steps are illustrated in Figure \ref{tow}
+
+\begin{minipage}{\textwidth}
 \centering
 \begin{center}
     \centering
@@ -420,6 +461,7 @@ Another task that would have otherwise been complex was the construction of the 
     \end{minipage}\hfill
 \end{center}
 \captionof{figure}{Workflow used to construct the 3D model of the tow rope item.}
+\label{tow}
 \end{minipage}
 
 \subsection{Unity}
@@ -644,7 +686,7 @@ Issues:
 
 
 
-\chapter{User Study, Analysis, and Evaluation}
+\chapter{User Study, Analysis, and Evaluation}\label{user-study-chapter}
 
 \section{User Study Design}
 
