@@ -30,7 +30,7 @@
 \usepackage{amsmath}
 \usepackage{graphicx}
 \usepackage[colorinlistoftodos]{todonotes}
-\usepackage{url}
+% \usepackage{url}
 \usepackage{caption}
 \usepackage{multicol}
 \usepackage{natbib}
@@ -88,12 +88,12 @@
 \tableofcontents{}
 
 \chapter*{Abstract}
-The purpose of this study is to utilise the recent opportunities to construct more accessible virtual training environments, afforded by advances in hardware and software technologies; powerful game development platforms, 360-degree cameras, and VR headsets. These virtual environments have the potential to be utilised in multiple industries, this project focusses specifically on the charity lifesaving organisation for saving lives at sea, the RNLI. This plethora of new technologies lead to many different methods with which to construct a virtual training environment, this study aims to directly compare two methods; 360-image environment vs. computer modelled environment. These environments were constructed in Unity3D, the free game development platform. Users interacted with this environment using Google Daydream View. In order to conclude the most effective medium for training, this project focussed on training a user's landmark knowledge. A test was constructed where a user is required to memorise the location of 9 items within an environment. After completion, users complete a memory test, and again a week later. Results indicate that the computer-modelled environment was far more effective in training a user's landmark knowledge. It is likely, although inconclusive, that this is caused by the difference of stereoscopic vision to monoscopic. Further studies are required to conclude the effect of context in which a user's required to recall their trained knowledge on a user's spatial memory.  
+The purpose of this study is to utilise the recent opportunities to construct more accessible virtual training environments, afforded by advances in hardware and software technologies; powerful game development platforms, 360-degree cameras, and VR headsets. These virtual environments have the potential to be utilised in multiple industries, this project focusses specifically on the charity lifesaving organisation for saving lives at sea, the RNLI. This plethora of new technologies lead to many different methods with which to construct a virtual training environment, this study aims to directly compare two methods; 360-image environment vs. computer modelled environment. These environments were constructed in Unity3D, the free game development platform. Users interacted with this environment using Google Daydream View. In order to conclude the most effective medium for training, this project focussed on training a user's landmark knowledge. A test was constructed where a user is required to memorise the location of 9 items within an environment. After completion, users complete a memory test, and again a week later. Results indicate that the computer-modelled environment was far more effective in training a user's landmark knowledge. It is theorised, although inconclusive, that this is caused by the difference of stereoscopic vision to monoscopic. Further studies are required to conclude the effect of context in which a user's required to recall their trained knowledge on a user's spatial memory, as well as the effect of stereoscopic vision.  
 
 \mainmatter
 \chapter{Introduction, and Background}\label{intro_chapter}
 \section{Background}
-\subsection{Royal National Lifeboat Institution}
+\subsection{Royal National Lifeboat Institution}\label{rnli-money}
 The Royal National Lifeboat Institution - RNLI - is a charity which save lives at sea. It is based in UK, Republic of Ireland, and the Channel Islands. In 2016, their crews and lifeguards saved 558 lives, with 8,851 emergency launches. Operating 238 lifeboat stations, and patrolling 240 beaches cost the institution £168.1M in 2015\footnote{RNLI: Where yours money goes \url{https://goo.gl/UjACQK}}. The cost of training a single lifeguard is £673, with the cost of a lifeboat crew member being considerably higher. \footnote{ RNLI Annual Reports and Accounts \url{https://goo.gl/XqhCZn}} 
 
 
@@ -117,7 +117,9 @@ The current solution which the RNLI employs to bridge this divide between theory
 \end{minipage}
 
 
-Scenario-based training is difficult to implement, because of the hazardous nature and potentially high cost of the scenarios for which a crew member must trained. Most notable of which is capsize training, an actual situation where a vessel capsizes will almost always be in terrible weather conditions, and sea state. But, unfortunately, the only way in which to replicate this in practice is by artificially capsizing a specifically designed vessel in a large pool or safe waters. This method is costly. Thus, an alternate method for which to replicate these situations would be invaluable not only the RNLI, but to all organisations which require training which is impractically hazardous or costly to conduct effectively. 
+Scenario-based training is difficult to implement, because of the hazardous nature and potentially high cost of the scenarios for which a crew member must trained. Most notable of which is capsize training, an actual situation where a vessel capsizes will almost always be in terrible weather conditions, and sea state. But, unfortunately, the only way in which to replicate this in practice is by artificially capsizing a specifically designed vessel in a large pool or safe waters. This method is costly. Thus, an alternate method for which to replicate these situations would be invaluable not only the RNLI, but to all organisations which require training which is impractically hazardous or costly to conduct effectively.
+
+The RNLI have already recognised this issue with current training techniques. At their headquarters in Poole, they have constructed an all-weather Lifeboat - ALB - simulator. This simulator consists of a large screen which is viewed from inside a model of the ALB wheelhouse. Using this simulator scenarios can be constructed such as fires, towing, poor weather conditions etc. Each of these scenarios would have been impossible to reconstruct without such an environment. This is a static simulator, with a cost far too high to allocate one for every station across the country; but this is certainly an insight into the necessity of such an environment.
 
 \subsection{Technological Progress} \label{tech_progress}
 The persistent march of technological innovation and progress present opportunities in every  industry, this is similarly true for practical training. Digitally simulated training environments are widely used, with the military and commercial aviation industries being the biggest investors. Training environments can be recreated in 3D as a simulator, allowing a user to be trained through a digital environment. 3D Simulators are not a new concept, but the creation of complex 3D applications has become considerably more accessible in recent years using free-to-use platforms such as Unity3D and Unreal Engine, and the ever increasing computational power of electrical devices. 
@@ -131,11 +133,11 @@ In a similar manner to 360 photography, adoption of VR technologies has been rap
 With the time and cost requirement of both creating and interacting with 3D Virtual environments decreasing, there exists many opportunities for organisations such as the RNLI to utilise these technologies for training purposes. 
 
 \subsection{Using Technology in Training }
-The technological innovations mentioned in section \ref{tech_progress} are offering new and fascinating ways to bridge the gap between theoretical and practical training.  These opportunities have not gone unnoticed by organisations such as the US, Canadian, and Royal Navy. Each conducting research in the early 21st century into ways in which virtual environments could be implemented most effectively. The typical approach to a training system is to construct a 3D model of the vessel that the user can move through, and interact with. 
+The technological innovations mentioned in section \ref{tech_progress} are offering new and fascinating ways to bridge the gap between theoretical and practical training.  These opportunities have not gone unnoticed by organisations such as the US, Canadian, and Royal Navy. Each conducting research in the early 21st century into ways in which virtual environments could be implemented most effectively. The typical approach to a training system is to construct a 3D model of the vessel that the user can move through, and interact with, this is typically interacted with using a . 
 
 A computer generated - CG, virtual reality - VR, implementation of this seems like the natural progression of this, allowing a user to have a greater sense of presence. But, the recent development of 360 imaging presents a new opportunity to create a virtual training system, with far less software development expertise required. A simple application of 360 imaging for training could be that a trainee simply watched a 360 video through a VR headset, allowing user to acquire a level of spatial awareness from a digital experience.
 
-The two available approaches - VR and 360-video - offer clear virtual benefits: VR allows a user to interact and manipulate a scene, and is dynamic; 360-video offers a photo-realistic representation of a scene. But, there are also economic factors which must be considered: VR requires software development expertise, therefore time and funding; 360-video can be created quickly, with relatively cheap equipment. Both require sufficient hardware, i.e. VR headsets, and computer systems or high-end mobile devices.  Hardware costs have been rapidly decreasing and can be expected to continue to do so. 
+The two available approaches - VR and 360-imaging - offer clear virtual benefits: VR allows a user to interact and manipulate a scene, and is dynamic; 360-video offers a photo-realistic representation of a scene. But, there are also economic factors which must be considered: VR requires software development expertise, therefore time and funding; 360-imagery can be created quickly, with relatively cheap equipment. Both require sufficient hardware, i.e. VR headsets, and computer systems or high-end mobile devices.  Hardware costs have been rapidly decreasing and can be expected to continue to do so. 
 
 \subsection{Summary}
 In summary, modern technology offers opportunities to improve the way that the RNLI - and similar organisations - train their inexperienced recruits. But the broad list of available technologies to do this, reveal new opportunities to construct non-optimal solutions to these issues. By virtue of the broad scope of solutions, some effort must be made to research the most effective of them. This project will aim to clarify some elements of this. This leads in to the following questions:
@@ -147,19 +149,19 @@ In summary, modern technology offers opportunities to improve the way that the R
 
 Thus, it is necessary to quantify the functional differences between these two approaches in the training of crew members. To do so, the current understanding of the field of psychology for practical training must be explored.
 
-\section{Literature Review}
-
-\subsection{Training in the Virtual Environment}
+\section{Literature Review}\label{litreview}
 First and foremost, it should be assessed whether it is appropriate to use virtual reality in order to train crew at the RNLI. \cite{Pantelidis2010} outlines the advantages and disadvantages of the use of virtual reality in training. In particular, the use of virtual reality is necessary when "training using the real thing is dangerous, impossible, inconvenient, or difficult"; many training units fit all but one of those criteria. Additionally, virtual reality training should be considered when "travel, cost, and/or logistics ... make and alternative attractive" and "teaching tasks involving dexterity or physical movement". In contrast, virtual reality should not be used when "interaction with real humans, either teachers or students, is necessary". Thus, the RNLI training programme is well suited to a virtual reality implementation of training, but careful consideration must be taken when deciding which units, and to what extent training will be completed in the virtual environment. 
 
 These relevant units are reliant on a crew member's foundation of spatial awareness whilst aboard any vessel; a crew member must know the location of any equipment, the general geography of the local area - including hazardous areas above and below water. The acquisition of spatial awareness is referred to as spatial cognition, and is the foundation which allows a person to perceive, recall, alter, and communicate spatial information. It is therefore necessary to explore the current understanding of the function of spatial cognition in the virtual environment.
 
 \subsection{Spatial Cognition}
-According to \cite{stone}, the term spatial awareness can be applied to the immediate environment in which one exists or to a remote environment in which an extension of oneself has been deployed, such as a remotely operated vehicle or manipulator, or a virtual environment. Acquiring spatial awareness is a fundamental cognitive process which allows individuals navigate any environment \cite{siegel}. 
+According to \cite{stone}, the term spatial awareness can be applied to the immediate environment in which one exists or to a remote environment in which an extension of oneself has been deployed, such as a remotely operated vehicle or manipulator, or a virtual environment. Acquiring spatial awareness is a fundamental cognitive process which allows individuals navigate any environment \citep{Michael2008}. Spatial cognition enables an individual to construct a cognitive map, from which they are able to determine the location of objects and themselves within an environment. \citep{downs}
 
- \cite{osberg} states that it is easy to assume that spatial cognition is a visual process, whereas it is in fact a multifaceted, multi-perceptual sequence of events.  The quality of distinctiveness or memorableness is not solely the result of the way the environment looks \citep{downs}. Although this is not a profound statement, it is important to consider, since the most intuitive view may be that the most accurate representation of an environment would be the most effective method for training. Given a scenario where only visual information is available, it would still not be necessarily true that the most accurate representation would be the most effective for training purposes. \cite{gleick} gives an interesting perspective, an artist's most powerful trait is realising that only a small amount of things are important, and they are able to see what they are. For direct sources of information, the visual, tactile, olfactory, and kinesthetic sense modalities combine to provide an integrated representation of the spatial environment. \citep{downs}
+ \cite{osberg} states that it is easy to assume that spatial cognition is a visual process, whereas it is in fact a multifaceted, multi-perceptual sequence of events.  The quality of distinctiveness or memorableness is not solely the result of the way the environment looks \citep{downs}. Although this is not a profound statement, it is important to consider, since the most intuitive view may be that the most accurate representation of an environment would be the most effective method for training. Given a scenario where only visual information is available, it would still not be necessarily true that the most accurate representation would be the most effective for training purposes. \cite{gleick} gives an interesting perspective, an artist's most powerful trait is realising that only a small amount of things are important, and they are able to see what they are. For direct sources of information, the visual, tactile, olfactory, and kinesthetic sense modalities combine to provide an integrated representation of the spatial environment \citep{downs}.
 
-The widely accepted hierarchy for the development of spatial awareness is the landmark-route-survey hierarchy, first proposed by \cite{siegel}.  Landmark knowledge relates to the presence of dominant object, or groups of object. Route knowledge is the development of a familiarity of paths between landmarks. An survey knowledge is the integration of both landmark and route knowledge. Using these three sets knowledge, an accurate representation of an environment can be compiled \citep{stone}.  
+The widely accepted hierarchy for the development of spatial awareness is the landmark-route-survey hierarchy, first proposed by \cite{siegel}.  Landmark knowledge relates to the presence of dominant object, or groups of object. Route knowledge is the development of a familiarity of paths between landmarks. Survey knowledge is the integration of both landmark and route knowledge. Using these three sets of knowledge, an accurate representation of an environment can be compiled \citep{stone}.
+
+
 
 \subsection{Training in the Virtual Environment}
 The ultimate goal of training is to have an individual who is able to perform a desired task, and as said by \cite{hussein}, execute the necessary skills, quickly and without hesitation. This is absolutely crucial in the instance of the RNLI, since the trained tasks may be performed under high stress, in life-threatening scenarios. Training is most robust when it is habitual or automatic \citep{hussein}. This can be made possible by forcing trainees to over-learn a task, such that it requires minimal cognitive processing  \citep{kirlik}. Both environments that this study considers offer this feature, since they are both able to be used indefinitely by a user at no extra cost. 
@@ -171,49 +173,73 @@ Virtual environments allow a user to feel a sense of presence \citep{osberg}. Pr
 Interactivity is an attribute of virtual environments which may contribute to an improvement of a training system's success. Motor activity has a fundamental role in the acquisition of spatial awareness; interaction with an environment is absolutely necessary for the correct interpretation of that environment \citep{siegel}. \cite{osberg} stipulates that the ability to move freely is essential in order for an individual to form a spatial representation of an environment. Interactivity can be considered to be associated with the exploration mode of the user through the VE, either passive or active exploration. \cite{wallet} showed that active exploration may have a beneficial effect on spatial cognition. Although, according to \cite{wallet} studies of these two strategies of exploration offer inconclusive results, and may be a result of varying complexity of tasks. This may be contradictory to training theory according to \cite{goldstein}, who states that any complex task must be broken into smaller tasks which can be individually trained to proficiency before integrating these learnt skills to the entire complex task. Which leads to a dilemma: active exploration may be more effective for complex tasks, but training is generally more effective when complex tasks are divided and conquered as simpler tasks. For further complexity, \cite{waller} found that VEs are more effective than real world training only after extensive exposure to the training environment. As such, the complexity and length of the training exercise will be a crucial factor to be considered when constructing an application and during the study. 
 
 \subsection{The Effectiveness of Training in Virtual Environments}
-\cite{Rose2000} studied the the true potential for training that virtual environments had. They concluded that virtual environments were in fact an effective way to train individuals, with there being no discernible difference in  the performance of individuals trained in the real world and in a virtual environment. More interestingly, participants trained in virtual environments coped better with interference when performing the task. \cite{Rose2000} hypothesise that this may be due to the nature of real world tasks being more mentally taxing, requiring more mental capacity, any added interference becomes difficult to handle; whereas, virtually trained participants have spare cognitive capacity. Other studies such as \cite{Hamblin2006} only concluded that training in the virtual environment was effective, but not as effective as training in the real world. \cite{Gupta2008} summarises that virtual environments are most useful for training in dangerous or costly tasks, but that virtual environments would never replace training in the real world for tasks which do not have these limiting factors. 
+"It is important that the environment in which a child is expected to learn be conducive and supportive of the learner" \citep{osberg}. A virtual environment enables this support, since the environment can be manipulated to any extent necessary to achieve this. \cite{Rose2000} studied the true potential for training that virtual environments had. They concluded that virtual environments were in fact an effective way to train individuals, with there being no discernible difference in  the performance of individuals trained in the real world and in a virtual environment. More interestingly, participants trained in virtual environments coped better with interference when performing the task. \cite{Rose2000} hypothesise that this may be due to the nature of real world tasks being more mentally taxing, requiring more mental capacity, any added interference becomes difficult to handle; whereas, virtually trained participants have spare cognitive capacity. Other studies such as \cite{Hamblin2006} only concluded that training in the virtual environment was effective, but not as effective as training in the real world. \cite{Gupta2008} summarises that virtual environments are most useful for training in dangerous or costly tasks, but that virtual environments would never replace training in the real world for tasks which do not have these limiting factors. 
 
 \subsection{Summary}\label{intro-summary}
-The elements of virtual training environments which make them potential more powerful than real world environments are infinite flexibility, and the ability the repeat scenarios indefinitely at no - or minimal - added cost. I
+It is clear that there is a multitude of factors that have an effect on spatial awareness which is developed in a virtual environment. With respect to human senses, almost every sensory modality plays a part in a user's ability to acquire spatial awareness. Utilised senses are reduced to only visual and motor activity when a user is within a virtual environment. The key factors may enable effective acquisition of spatial awareness are presence, and interactivity. 
 
-It is clear that there is a multitude of factors that have an effect on spatial awareness which is developed in a virtual environment. With respect to human senses, almost every sensory modality plays a part in a user's ability to acquire spatial awareness. Utilised senses are reduced to only visual and motor activity when a user is within a virtual environment. The key factors may enable effective acquisition of spatial awareness are presence, interactivity, 
+The elements of spatial cognition and the construction of cognitive maps discussed above are perfectly suited for modern virtual reality environments. Most notably, the natural movement within a scene has progressed in leaps and bound in recent years. Modern devices offer head-tracking on motion-tracked controllers, allowing users to interact with an environment in far more complex ways than previously possible. Importantly, a user has three degree of freedom to manipulate the camera - i.e. rotational. 
 
-The topic of spatial cognition is one without concrete conclusions. The way in which spatial information is gathered from some environment, and how it is organised within the brain is not concretely known, as is the way in which that information is recalled. It is evident that it is not simply a visual process, and many other sensory modalities are utilised; of particular importance to this study is the effect of motor activity and visual information. 
+Presence is a factor which has proven difficult to quantify, or study. But, modern devices offer many of the features which have been discussed to be necessary in order to yield a satisfactory sensation of presence within a virtual environment. Powerful computers enable the construction of more accurate 3D models than ever before, which is a feature deemed invaluable by previous studies \citep{steuer}. 
 
-As discussed, the attributes of a virtual environment which may effect spatial cognition are illustrated in Figure \ref{flow}.
+Further, the elements of virtual training environments which make them potentially more powerful than real world training environments are infinite flexibility, and the ability the repeat scenarios indefinitely at no - or minimal - added cost, and completely without danger. Reinforcing the idea that virtual environments are the perfect addition to many training programmes that exist within organisations such as the RNLI.
+
+
+% Discuss Context!!!
+\chapter{Approaches, and Requirement Analysis}
+
+\section{Requirements}
+\subsection{User Study}
+In order to reach a robust result it is important to detail the requirements of the user study. Crucially, the environment should be as consistent as possible between the two groups. The requirements follow:
+
+\begin{itemize}
+    \item Identical hardware
+    \item Similar environment for all but presentation medium
+\end{itemize}
+
+\subsection{Application}
+As discussed in Chapter \ref{litreview} virtual environments offer effective ways to train users. In particular, environments which are associated with excessive costs, and hazardous scenarios benefit most from such environments. The RNLI is an ideal candidate for such a training environment to be implemented. With this in mind, the requirements of such an application are as follows:
+
+\begin{itemize}
+    \item Affordable
+    \item Accessible
+    \item Effective
+\end{itemize}
+
+Affordability is an inherently relative requirement. In this instance, an opportunity to improve the performance of every crew member at a lifeboat station would be extremely valuable to any lifesaving organisation. But, the RNLI already spends large amounts of resources on training as discussed in Section \ref{rnli-money}. Regardless, it is an important consideration to be aware of throughout this project. An accessible solution ensures that it could be rolled out to all stations without the need to invest resources and time to train each station how to set the virtual environment up. The requirement of an effective solution means that it should be able to effectively train crew, and improve their performance in the assessment of competency based units. In order for a virtual environment to effectively train individuals the following requirements must be considered:
+
+\begin{itemize}
+    \item Users must feel present within the environment.
+    \item Users must be able to interact naturally with the environment.
+    \item The environment must accurately represent the scale and position of objects within it.
+\end{itemize}
+
+\section{Approaches}
+\subsection{Technology}
+In consideration of the aforementioned requirements, modern technology offers two methods to place trainees in interactive virtual environments, 360-degree imaging, and computer-generated virtual reality; although 360-degree video is often disputed to be a form of VR \footnote{STOP CALLING GOOGLE CARDBOARD'S 360-DEGREE VIDEOS VR \url{https://goo.gl/UGthLf}}, the two technologies will be referred to as 360 and CG for simplicity. 
+
+\subsubsection{360 Imaging}
+The RNLI has experimented with 360-imaging in the past, creating a tour of their new Shannon-class All-weather Lifeboat \footnote{RNLI VR Tour, for Cardboard \url{https://goo.gl/1Ha6vs}}. This application allows a user to explore a series of 360 images from within the vessel. This application also offers some level of interactivity, which may be moderately effective in the training of crew members. Although, according to previous studies interactivity, and active exploration may be essential to effective training. This application uses static images which can be collected with the use of an omnidirectional, monoscopic camera; monoscopic means that the image produced is a single image not two images taken at slightly different location. Since this is monoscopic, it is not possible to make a 3D scene, and only a 2D environment. At the very cutting edge of 360-imagery, stereoscopic cameras are available, although the current cost is considerably higher than the simpler monoscopic cameras; this cost - as with any modern technology is rapidly declining \footnote{Forbes: China's Kandao \url{https://www.forbes.com/sites/bensin/2018/05/02/chinas-kandao-says-its-triple-lens-360-cam-can-shoot-3d-vr-footage/#1b64d8524fd2}}. Furthermore, the added complexity for manipulating stereoscopic imagery is beyond most free software, although there are many applications which do offer this functionality \footnote{Nvidia: 3D PC Editing Software\url{http://www.nvidia.co.uk/object/3d-pc-editing-software-uk.html}}. 
+
+In light of this, in order to fulfil the two previously discussed requirements, accessibility and affordability, a monoscopic 360 camera is the only option within scope. Although, this has a potential to reduce the overall effectiveness of the application, since a user will have a reduced sense of depth. This difference is discussed for the in Section \ref{stereo}.
+
+\subsubsection{Computer Generated Virtual Reality}
+There is an expansive list of potential applications which could be used to develop immersive, interactive, 3D environments. Many of these platforms are free for use, or follow a freemium business model. The most popular of which are Unity and Unreal Engine \footnote{Instabug: Game Engines \url{https://blog.instabug.com/2017/12/game-engines/}}; there are also open-source solutions such as Godot. Each of these engines fit the aforementioned requirements, and are fully capable of constructing and effective VR application. 
+
+Similarly, there is an abundance of applications available for the construction of 3D models. Most notable of which are Blender, and Maya. Blender is an open-source 3D modelling suite, whereas Maya is a professional 3D modelling suite. Both are fully capable of constructing the necessary models. Maya offers a free student license, and thus will be used for the creation of 3D models throughout this project.
+
+\subsubsection{Viewing Hardware}
+In conjunction with the requirement of consistency between environments, it is necessary that both applications should be experienced using identical hardware. Viewing virtual reality environments is done using a head-mounted display - HMD - as shown in Figure \ref{headmounted}.
+
 \begin{minipage}{\textwidth}
-\hfill \break
 \centering
-\includegraphics[width=0.45\textwidth]{images/spatial_cognition_flow.png}
-\captionof{figure}{Diagram illustrating the relationship between attributes of a virtual environment and their effect on spatial cognition}
-\label{flow}
+\includegraphics[width=0.6\textwidth]{images/rnli_college.jpg}
+\captionof{figure} {Training facility where crew members train lifesaving skills}
+\label{headmounted}
 \hfill \break
 \end{minipage}
 
-The lack of concrete evidence to support the effect of interactivity, fidelity, and presence on spatial cognition, is illustrated.  Thus, these attributes are the focal point of this study; the research questions stated in section \ref{research} can be refined to:
-
-\textit{To what extent do Interactivity, Fidelity, and Presence effect spatial cognition in a Virtual Environment?}
-
-% Discuss Context!!!
-
-\section{Approaches}
-
-\subsection{Technology}
-Modern technology offers two methods to place trainees in interactive virtual environments, 360-degree imaging, and computer-generated virtual reality; although 360-degree video is often disputed to be a form of VR \footnote{STOP CALLING GOOGLE CARDBOARD'S 360-DEGREE VIDEOS VR \url{https://goo.gl/UGthLf}}, the two technologies will be referred to as 360 and CG for simplicity.
-
-\subsubsection{360 Imaging}
-The RNLI has experimented with 360-imaging in the past, creating a tour of their new Shannon-class All-weather Lifeboat \footnote{RNLI VR Tour, for Cardboard \url{https://goo.gl/1Ha6vs}}. This application allows a user to explore a series of 360 images from within the vessel. In this instance, the fidelity of the environment is high, as it is photo realistic; which has been proven to be crucial for training. This application also offers some level of interactivity, which may be moderately effective in the training of crew members. Although, according to previous studies interactivity, and active exploration may be essential to effective training. Finally, since this application only uses static images, it is very difficult to give the user a sense of presence, which may be important in the performance of users within the VE - as studied by \cite{coxon}.
-
-In order to improve the flexibility of the application, as well as the interactivity, a 360-video application may be the most effective approach to take.
-
-\subsubsection{Computer Generated Virtual Reality}
-The expansive list of available platforms to recreate an environment. The goal of this application is to reduce the number of factors which may lead to a disparity between the 360 and CG versions. Thus, at a minimum the scale, and position of objects within each scene should be close to identical. Maximising the amount of interactivity within the CG environment is a priority, to ensure that the disparity of interactivity between each medium is maximised. Modern game development platforms offer extremely powerful tools to facilitate the construction of immersive, and interactive virtual environments. Specifically, Unity3D and Maya will be used to construct these virtual environments. 
-
-\subsubsection{Viewing Hardware}
 To maintain consistency, and reduce variables between each application, it will be important that both applications feel identical to the user - excluding interactivity and fidelity. To achieve this, both applications will utilise the same viewing  hardware. Notably, in practice, viewing a computer-generated VE environment requires far more sophisticated hardware, and is thus more complex and expensive to use. 
-
-\subsection{Testing}
-In the interest of maximising statistical power of a potentially small sample, a counterbalanced within-subject study will be conducted. 
 
 \subsubsection{Complexity}
 It is clear that the spatial cognition of a user in the VE is effected by the complexity of the task. A testing scenario of varying complexity and length must be utilised in order to ensure a robust study. Thus, the first requirement of the study is that it should consist o multiple stages ranging from simple to complex. 
