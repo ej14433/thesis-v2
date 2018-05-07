@@ -88,7 +88,12 @@
 \tableofcontents{}
 
 \chapter*{Abstract}
-The purpose of this study is to utilise the recent opportunities to construct more accessible virtual training environments, afforded by advances in hardware and software technologies; powerful game development platforms, 360-degree cameras, and VR headsets. These virtual environments have the potential to be utilised in multiple industries, this project focusses specifically on the charity lifesaving organisation for saving lives at sea, the RNLI. This plethora of new technologies lead to many different methods with which to construct a virtual training environment, this study aims to directly compare two methods; 360-image environment vs. computer modelled environment. These environments were constructed in Unity3D, the free game development platform. Users interacted with this environment using Google Daydream View. In order to conclude the most effective medium for training, this project focussed on training a user's landmark knowledge. A test was constructed where a user is required to memorise the location of 9 items within an environment. After completion, users complete a memory test, and again a week later. Results indicate that the computer-modelled environment was far more effective in training a user's landmark knowledge. It is theorised, although inconclusive, that this is caused by the difference of stereoscopic vision to monoscopic. Further studies are required to conclude the effect of context in which a user's required to recall their trained knowledge on a user's spatial memory, as well as the effect of stereoscopic vision.  
+The purpose of this study is to utilise the recent opportunities to construct more accessible virtual training environments, afforded by advances in hardware and software technologies; powerful game development platforms, 360-degree cameras, and VR headsets. These virtual environments have the potential to be utilised in multiple industries, this project focuses specifically on the charity lifesaving organisation for saving lives at sea, the RNLI. This plethora of new technologies lead to many different methods with which to construct a virtual training environment, this study aims to directly compare two methods; 360-image environment vs. computer modelled environment. These environments were constructed in Unity3D, the free game development platform. Users interacted with this environment using Google Daydream View. In order to conclude the most effective medium for training, this project focused on training a user's landmark knowledge. A test was constructed where a user is required to memorise the location of 9 items within an environment. After completion, users complete a memory test, and again a week later. Results proved that user's which were trained in the computer-generated environment made less errors when recalling the location of items than those that were trained in the 360-image environment. It is theorised, that this is caused by the difference of stereoscopic vision to monoscopic vision. Further work is required to determine the effect of context in which a user recalls their training, which may have benefited the 360-environment.  
+
+\chapter*{Acknowledgements}
+\textbf{Kirsten Cater} for supervision and guidance, and catalysing the project. \\
+\textbf{Chris Bevan} for help throughout the project, without whom this project would have been considerably more difficult.\\
+\textbf{Bernie Davies, Roger Couch, and New Quay Lifeboat Station} for unrestricted access to the D-Class, and general advice. \\
 
 \mainmatter
 \chapter{Introduction, and Background}\label{intro_chapter}
@@ -99,14 +104,14 @@ The Royal National Lifeboat Institution - RNLI - is a charity which save lives a
 
 
 \subsection{RNLI Training} \label{rnli_training}
-The RNLI recruits and trains volunteers in order to save lives at sea. By the voluntary nature of recruits, it is not - and can not - be a requirement that a person has maritime experience prior to recruitment. Thus, the RNLI has a robust structure for crew development. Training consists of both theoretical training in a classroom, and sea-based, practical training.
+The RNLI recruits and trains volunteers in order to save lives at sea. By the voluntary nature of recruits, it is not - and can not be - a requirement that a person has maritime experience prior to recruitment. Thus, the RNLI has a robust structure for crew development. Training consists of both theoretical training in a classroom, and sea-based, practical training.
 
 The current format of training at the RNLI is that each crew member follows a structured training programme. This programme consists of multiple competence based training units, which cover an agreed range of skills required to complete a task. \footnote{RNLI: Lifeboat crew training \url{https://goo.gl/kuCafE}}. Each unit consists of a classroom theory element, and a practical element. For example, the first unit that a recently joined member of crew must complete is PPE, for which they are assessed on their knowledge of Personal Protective Equipment; this includes Helmet, Lifejacket, Flares, Personal Location Beacon, Harness, Dry Suit, Spray Hood, Whistle, and a Light. If a crew member is able to recall and describe each of these items and their function, they pass the unit and become eligible for assessment for the next unit - typically Boat Layout. 
 
 Later units - such as Navigation - entail elements of both dry training (i.e. training on land) and wet training (i.e. training at sea). In order to pass the Navigation unit, a crew member must demonstrate their theoretical knowledge in a classroom test environment; for example, plotting co-ordinates on a map. The crew member will then be required to demonstrate their practical knowledge of the navigational equipment whilst aboard the vessel. 
 For the previously described units, and for many similar units, the current training format is perfectly suitable for the training of inexperienced crew members; since there is no inherent hazard or significant cost to train a crew member to become competent at these tasks. This is not the case for all units. Units such as boat handling, sea survival, and capsize training - and many others - can become hazardous environments for inexperienced crew. This is due to the divide between theoretical training, and practical training. 
 
-The current solution which the RNLI employs to bridge this divide between theory and practice is that all crew must attend a 1-week training course at the RNLI College in Poole. During this week, crew receive practical training in a specifically built facility; this training ranges through fire fighting, capsize drills, and sea survival. This process is expensive, but absolutely crucial to the safe functioning of Lifeboat stations. Due to the turnover of voluntary crew members, which increases the average costs of a fully trained crew member, It is not possible to frequently train crew in this manner. 
+The current solution which the RNLI employs to bridge this divide between theory and practice is that all crew must attend a 1-week training course at the RNLI College in Poole. During this week, crew receive practical training in a specifically built facility; this training ranges through fire fighting, capsize drills, and sea survival. This process is expensive, but absolutely crucial to the safe functioning of Lifeboat stations. Due to the turnover of voluntary crew members, which increases the average costs of a fully trained crew member, it is not possible to frequently train crew in this manner. 
 
 Scenario-based training is difficult to implement, because of the hazardous nature and potentially high cost of the scenarios for which a crew member must trained. Most notable of which is capsize training, an actual situation where a vessel capsizes will almost always be in terrible weather conditions, and sea state. But, unfortunately, the only way in which to replicate this in practice is by artificially capsizing a specifically designed vessel in a large pool or safe waters. This method is costly. Thus, an alternate method for which to replicate these situations would be invaluable not only the RNLI, but to all organisations which require training which is impractically hazardous or costly to conduct effectively.
 
@@ -115,20 +120,18 @@ The RNLI have already recognised this issue with current training techniques. At
 \subsection{Technological Progress} \label{tech_progress}
 The persistent march of technological innovation and progress present opportunities in every  industry, this is similarly true for practical training. Digitally simulated training environments are widely used, with the military and commercial aviation industries being the biggest investors. Training environments can be recreated in 3D as a simulator, allowing a user to be trained through a digital environment. 3D Simulators are not a new concept, but the creation of complex 3D applications has become considerably more accessible in recent years using free-to-use platforms such as Unity3D and Unreal Engine, and the ever increasing computational power of electrical devices. 
 
-Of specific interest in this project is the more recent progress of Virtual Reality - VR - devices. This trend was reinvigorated by the development of the Oculus Rift - which was later purchased by Facebook \footnote{Facebook acquire Oculus \url{https://www.facebook.com/zuck/posts/10101319050523971}}. As with most innovations, the Oculus Rift is no longer the best selling headset, being replaced by the HTC Vive \footnote{HTC Vive Outselling Oculus Rift 2-to-1 \url{https://goo.gl/SfqrM2}} many other tech giants have released similar devices, such as the Samsung Gear VR, Google Cardboard, Playstation VR. With a fierce competition to capture a large share of a young market, pricing of high quality VR devices are falling year on year. Many VR devices - such as the Cardboard and Gear - take advantage of the power of modern high end smartphones. 
+Of specific interest in this project is the more recent progress of Virtual Reality - VR - devices. This trend was reinvigorated by the development of the Oculus Rift - which was later purchased by Facebook \footnote{Facebook acquire Oculus \url{https://www.facebook.com/zuck/posts/10101319050523971}}. As with most innovations, the Oculus Rift is no longer the best selling headset, being replaced by the HTC Vive \footnote{HTC Vive Outselling Oculus Rift 2-to-1 \url{https://goo.gl/SfqrM2}} many other tech giants have released similar devices, such as the Samsung Gear VR, Google Cardboard, and Playstation VR. With a fierce competition to capture a large share of a young market, pricing of high quality VR devices are falling year on year. Many VR devices - such as the Cardboard and Gear - take advantage of the power of modern high end smartphones. 
 
-Creating 360-degree images and videos is now possible from most mobile devices, this can be done by stitching multiple images of a single scene together, in order to create a full image. Such methods construct a static 2D image, which can be interactively explored by a user. Dedicated cameras are becoming more widely available, utilising multiple omnidirectional cameras which capture video and automatically . The increased demand for 360-video lead to the largest video viewing platforms, YouTube and Facebook, both launching a feature in 2015 which allowed viewers to watch and interact with such videos \footnote{Facebook joins YouTube in showing 360-degree videos – including Star Wars \url{https://goo.gl/H9iE6f}}. 
-
-In a similar manner to 360 photography, adoption of VR technologies has been rapidly increasing in recent years. With Facebook acquiring the VR company Oculus in 2014 \footnote{Facebook closes its \$2bn Oculus Rift acquisition. What next? \url{https://goo.gl/UQSTsP}}, and Google releasing its own VR interface for smartphones in the same year \footnote{Google Cardboard launches in UK for £15 \url{https://goo.gl/f9CS8f}}.  
+Creating 360-degree images and videos is now possible from most mobile devices, this can be done by stitching multiple images of a single scene together, in order to create a full image. Such methods construct a static 2D image, which can be interactively explored by a user. Dedicated cameras are becoming more widely available, utilising multiple omnidirectional cameras which capture video and images automatically . The increased demand for 360-video lead to the largest video viewing platforms, YouTube and Facebook, both launching a feature in 2015 which allowed viewers to watch and interact with such videos \footnote{Facebook joins YouTube in showing 360-degree videos – including Star Wars \url{https://goo.gl/H9iE6f}}. 
 
 With the time and cost requirement of both creating and interacting with 3D Virtual environments decreasing, there exists many opportunities for organisations such as the RNLI to utilise these technologies for training purposes. 
 
 \subsection{Using Technology in Training }
 The technological innovations mentioned in Section \ref{tech_progress} are offering new and fascinating ways to bridge the gap between theoretical and practical training.  These opportunities have not gone unnoticed by organisations such as the US Navy \citep{hussein}. Which conducted research in the 2009 into ways in which virtual environments could be implemented most effectively. The typical approach to a training system is to construct a 3D model of the vessel that the user can move through, and interact with, this is typically interacted with using a computer monitor, mouse, and keyboard. 
 
-A computer generated - CG, virtual reality - VR, implementation of this seems like the natural progression of this, allowing a user to have a greater sense of presence. But, the recent development of 360 imaging presents a new opportunity to create a virtual training system, with far less software development expertise required. A simple application of 360 imaging for training could be that a trainee simply watched a 360 video through a VR headset, allowing the user to acquire a level of spatial awareness from a digital experience.
+A computer generated - CG, virtual reality - VR, implementation seems like the natural progression of this, allowing a user to have become more immersed within the environment. But, the recent development of 360 imaging presents a new opportunity to create a virtual training system, with far less software development expertise required. A simple application of 360 imaging for training could be that a trainee simply watched a 360 video through a VR headset, allowing the user to acquire a level of spatial awareness from a digital experience.
 
-The two available approaches - VR and 360-imaging - offer clear benefits: VR allows a user to interact and manipulate a scene, and is dynamic; 360-video offers a photo-realistic representation of a scene. But, there are also economic factors which must be considered: VR requires software development expertise, therefore time and funding; 360-imagery can be created quickly, with relatively cheap equipment. Both require sufficient hardware, i.e. VR headsets, and computer systems or high-end mobile devices.  Hardware costs have been rapidly decreasing and can be expected to continue to do so. 
+The two available approaches - computer-generated (CG) and 360-imaging - offer clear benefits: CG allows a user to interact and manipulate a scene, and is dynamic; 360-images offer a photo-realistic representation of a scene. But, there are also economic factors which must be considered: CG requires software development expertise, therefore time and funding; 360-imagery can be created quickly, with relatively cheap equipment. Both require sufficient hardware, i.e. VR headsets, and computer systems or high-end mobile devices.  Hardware costs have been rapidly decreasing and can be expected to continue to do so. 
 
 \subsection{Summary}\label{tech-summary}
 In summary, modern technology offers opportunities to improve the way that the RNLI - and similar organisations - train their inexperienced recruits. But the broad list of available technologies to do this, reveal new opportunities to construct non-optimal solutions to these issues. By virtue of the broad scope of solutions, some effort must be made to research the most effective of them. This project will aim to clarify some elements of this. This leads in to the following questions:
@@ -157,7 +160,7 @@ The widely accepted hierarchy for the development of spatial awareness is the la
 \subsection{Training in the Virtual Environment}
 The ultimate goal of training is to have an individual who is able to perform a desired task, and as said by \cite{hussein}, execute the necessary skills, quickly and without hesitation. This is absolutely crucial in the instance of the RNLI, since the trained tasks may be performed under high stress, in life-threatening scenarios. Training is most robust when it is habitual or automatic \citep{hussein}. This can be made possible by forcing trainees to over-learn a task, such that it requires minimal cognitive processing  \citep{kirlik}. Both environments that this study considers offer this feature, since they are both able to be used indefinitely by a user at no extra cost. 
 
-\citet{osberg} identifies that a virtual environment - VE - offers a range of attributes which make it extremely well suited to training. Crucially, VEs offer an infinite amount of flexibility in the recreation of environments, This is trait which has been utilised since the original conception of VE-based training, and remains its most powerful. It is valuable to note, that although the 360-image environment is a virtual environment, it does support this flexibility; one of the most significant downsides to this method of training. 
+\citet{osberg} identifies that a virtual environment - VE - offers a range of attributes which make it extremely well suited to training. Crucially, VEs offer an infinite amount of flexibility in the recreation of environments, This is a trait which has been utilised since the original conception of VE-based training, and remains its most powerful. It is valuable to note, that although the 360-image environment is a virtual environment, it does support this flexibility; one of the most significant downsides to this method of training. 
 
 Virtual environments allow a user to feel a sense of presence \citep{osberg}. Presence is the experience of a virtual environment, such that a user feels that they are "there" \citep{steuer}; presence is the sensation of being at a remote work-site rather than at the operator's control station \citep{Witmer1998}. In fact, the premise of virtual reality is to maximise the experience of presence to the point that a user is not aware that they are in a virtual environment. This accuracy relies on scale, position, and fidelity  of objects within that scene; secondly, it relies on the accurate and responsive display of the scene to the user; vividness and interactivity positively relate to the sense of presence \citep{steuer}. \cite{Gupta2008} agrees that "in order for these senses to be fully utilised and for knowledge to be transferred from the virtual environment to the real world, a high sense of presence must be experienced by the user". \cite{Witmer1998} found that there may be a weak but consistent relation between the sense of presence and task performance of users. \cite{Witmer1998} also states that immersion, selective attention, perceptual fidelity, and naturalness of interaction all affect a user's sense of presence. \cite{Romano2001} attempted to study these effects, but did not yield conclusive results; they do, however, posit that the type of interface is crucial to a user's training performance. Specifically, that head-mounted displays may offer a richer learning experience to users.
 
@@ -260,7 +263,7 @@ Now that the unit for assessment has been chosen, it is necessary to decide the 
 \chapter{Development}
 
 \section{Application Overview}
-The requirements for this application were to construct two environments within which users are able to explore. Crucially, these applications should be interacted with in the same way and use the same hardware, in order to not introduce uncontrolled variables to the study. Additionally, in order to avoid motion sickness in users both environments will not allow for continuous adjustment of location in the environment. Thus, users will only be able to move discretely throughout the scene by selecting locations they wish to move to. 
+The requirements for this application were to construct two environments within which users are able to explore. Crucially, these applications should be interacted with in the same way and use the same hardware, in order to not introduce uncontrolled variables to the study. Additionally, in order to avoid motion sickness, both environments will not allow for continuous adjustment of location in the environment. Thus, users will only be able to move discretely throughout the scene by selecting locations they wish to move to. 
 
 Broadly, the intention of this project is to construct a virtual training environment in order to train crew members on RNLI Lifeboats. As discussed in Section \ref{tech_progress} there has been significant progress in the field of immersive virtual reality environments. Specifically, this application will teach users the layout of the equipment aboard the vessel. As detailed in Section \ref{application-approach} the number of items the user will need to recall the location of will be nine. These nine items are as follows:
 
@@ -447,7 +450,7 @@ These steps are illustrated in Figure \ref{tow}
 \end{minipage}
 
 \subsection{Unity}
-Importing the Maya model into Unity is easy. A particularly useful workflow is saving from Maya directly into the Unity assets folder, thus all changes in the Maya file are changed within Unity on save. In order to make the model interact with the environment and to raycasts simple collider primitives are positioned over the model. Although the environment is static, in order for the reticle from the Google Daydream controller to be usable this is a necessity.  
+Importing the Maya model into Unity is easy. A particularly useful workflow is saving from Maya directly into the Unity assets folder, thus all changes in the Maya file are changed within Unity on save. In order to make the model interact with the environment and to raycasts, simple collider primitives are positioned over the model. Although the environment is static, in order for the reticle from the Google Daydream controller to be usable this is a necessity.  
 
 \begin{minipage}{\textwidth}
 \hfill \break
@@ -460,6 +463,39 @@ Importing the Maya model into Unity is easy. A particularly useful workflow is s
 
 \subsection{Demo Scene and Scene Menu}\label{demo}
 Prior to entering the scene, users are given an opportunity to practice within a training environment. This training environment utilises the demo scene which is included within the Google VR package - as shown in Figure \ref{demo-pic}.
+
+\begin{minipage}{\textwidth}
+\hfill \break
+\centering
+\includegraphics[width=0.6\textwidth]{images/demo-pic.png}
+\captionof{figure}{Screenshot of Demo Scene and Scene Menu.}
+\label{demo-pic}
+\hfill \break
+\end{minipage}
+
+This Scene also offers the user the opportunity to select their scene, this is done using a script component added to the UI element - shown in Figure \ref{scene_script}:
+
+\begin{minipage}{\textwidth}
+\begin{lstlisting}
+public void LoadScene(int level) {
+	Application.LoadLevel(level);
+}
+\end{lstlisting}
+\captionof{figure}{Code snippet for choosing scene.}
+\label{scene_script}
+\end{minipage}
+
+Then by attaching an event trigger element - as shown in Figure \ref{demo-trigger} - with a trigger for onclick which calls this function with the desired scene, a scene is chosen.
+
+\begin{minipage}{\textwidth}
+\hfill \break
+\centering
+\includegraphics[width=0.5\textwidth]{images/demo-trigger.png}
+\captionof{figure}{Screenshot of trigger associated with selecting scene.}
+\label{demo-trigger}
+\hfill \break
+\end{minipage}
+
 
 \section{360-Image Environment}
 The second application which was constructed was an interactive real world environment. This utilises 360-degree images from the actual environment. Users are then able to use the UI elements to explore this environment, and the objects within it. 
@@ -553,7 +589,7 @@ Unity makes constructing 360-degree environments trivial. As detailed in a Unity
 Using the steps above it becomes simple to construct an environment within Unity which places a user within a 360-environment. Now, in order to allow a user to explore an environment there simply needs to be a material for each 360-image, which is changed to according to user input. For example, if a user would like to see inside a container, the user can click that container, then the material of the sphere changes to an image with a close up view of the open container. This creates the illusion that a user is moving around a scene, and is detailed in Section \ref{interaction}. 
 
 \section{Google VR, Scene Interaction, and Deployment}
-During the development phase and early testing, it was concluded that it was disorienting to have transformation within the 360-video scene, and thus it was concluded that the 360-image environment would use static images. In order to maintain consistency it was concluded that the CG environmnet would need to also have a statically positioned camera; although both environments would obviously allow rotational camera movement.  
+During the development phase and early testing, it was concluded that it was disorienting to have transformation within the 360-image scene, and thus it was concluded that the 360-image environment would use static images. In order to maintain consistency it was concluded that the CG environment would need to also have a statically positioned camera; although both environments would obviously allow rotational camera movement.  
 
 \subsection{Google VR}\label{googlevr}
 
@@ -574,7 +610,7 @@ The elements which a user interacts with in the 360-image environment are UI lab
 
 \begin{minipage}{\textwidth}
     \centering
-    \includegraphics[width=0.35\textwidth]{images/360-event-component.png}
+    \includegraphics[width=0.5\textwidth]{images/360-event-component.png}
     \captionof{figure}{Screenshot of the Event Trigger component attached to each UI label in the 360-environment.}
     \label{360-event}
 \end{minipage}
@@ -599,7 +635,7 @@ In the computer-generated environment it is the objects themselves, or the hatch
 
 \begin{minipage}{\textwidth}
     \centering
-    \includegraphics[width=0.35\textwidth]{images/CG-event-component.png}
+    \includegraphics[width=0.5\textwidth]{images/CG-event-component.png}
     \captionof{figure}{Screenshot of the Event Trigger component attached to each interactable object in the CG-environment.}
     \label{cg-event}
 \end{minipage}
@@ -634,7 +670,7 @@ else if (item.tag == "Bag" && item.GetComponent<State> ().state == 1) {
 \begin{minipage}{\textwidth}
     \centering
     \begin{center}
-        \includegraphics[width=0.35\textwidth]{images/animator.png}
+        \includegraphics[width=0.5\textwidth]{images/animator.png}
         \captionof{figure}{Screenshot of the animator component attached to each animated object in the CG-environment.}
         \label{animator}
     \end{center}
@@ -646,7 +682,7 @@ Unity offers the ideal environment to build directly to Android. This is done by
 
 \section{Memory Test}
 \subsection{Site Overview}
-In order to allow users to complete the memory test, and submit their results remotely, a static website was constructed. Using a static site meant that the site could be hosted by GitHub pages \footnote{GitHub Pages | Websites for you and your projects \url{https://pages.github.com/}}. The only requirement of the site is that a user can complete the memory test and submit their results. To ensure that any submitted results are verified that they have come from a specific user, a user must first have to sign in. Once a user has signed in. Once a user has signed in, their results must be submitted to and stored in a database, along with their user id. To enable the use of the following APIs within a static website the JavaScript tool Browserify was used. This tool bundles all dependencies into a single \lstinline{bundle.js} file.  
+In order to allow users to complete the memory test, and submit their results remotely, a static website was constructed. Using a static site meant that the site could be hosted by GitHub pages \footnote{GitHub Pages | Websites for you and your projects \url{https://pages.github.com/}}. The only requirement of the site is that a user can complete the memory test and submit their results. To ensure that any submitted results are verified to have come from a specific user, a user must first have to sign in. Once a user has signed in. Once a user has signed in, their results must be submitted to and stored in a database, along with their user id. To enable the use of the following APIs within a static website the JavaScript tool Browserify was used. This tool bundles all dependencies into a single \lstinline{bundle.js} file.  
 
 \subsection{Web Technologies}
 
@@ -722,8 +758,8 @@ window.Right = function() {
 The second requirement of this site is that it should be usable on mobile. Modern CSS functionality makes this task trivial for a static site. Using only the \lstinline{rem} unit of measurement ensures that all elements are scaled and positioned relative to the size of the viewing device. It is important to ensure the use of the meta tag \lstinline{<meta name="viewport" content="width=device-width, initial-scale=1"/>} to correctly scale to smaller devices. 
 
 
-\ subsection{Web Design}
-
+\subsection{Web Design}
+The appearance of the Website was intended to be as minimal as possible. Figure \ref{web-design} demonstrates this. The wire-frame of the D-Class was constructed using the free, professional quality vector graphics editor Inkscape\footnote{Draw Freely | Inkscape \url{https://inkscape.org/en/}}.
 
 \begin{center}
     \centering
@@ -778,21 +814,22 @@ As discussed in Section \ref{intro-summary} there is a multitude of factors whic
 A third factor to be considered is the varying scene complexity between each of the environments.  Within the computer-generated environment, the scene is uncluttered with very little irrelevant items within the scene. This is in contrast to the complexity of the 360-image environment, which is considerably more cluttered. This is due to the fact the this environment is constructed from actual on-site images, which by nature include many irrelevant items; although every effort was taken to minimise this. 
 
 \subsection{Hypothesis}\label{hypothesis}
-I hypothesise that the inherently reduced complexity, coupled with the stereoscopic vision will yield improved transfer of spatial awareness for users which experience the CG scene.
+I hypothesise that the inherently reduced complexity, coupled with the stereoscopic vision will cause users which experience the computer-generated environment to make less errors when they recall the location of the items on the vessel.
+
 
 \subsubsection{Null Hypothesis}
 With this in mind it is possible to construct the null hypothesis that there will be no difference in the error count of users which have been trained in the CG environment and in the 360 environment.
 
 
 \subsection{Summary of Experimental Procedure}\label{cantab}
-The subjects chosen for this study were chosen at random from individuals at the University of Bristol, with no prerequisites, in a Hallway testing manner. This lead to a consistent mix of individuals mostly in the demographic of students from age of 18-25. 20 subjects were tested, with 18 completing the week later memory test. Although there was little or no choice for test subjects, this group is a fair representation of the target audience of this training application, and importantly most students in this age range will have similar experience in video gaming, and thus should not affect the results in this small sample size. Although, there may be a discussion to be had with regards to potential disparities between males and females participating in spatial memory studies. 
+The subjects chosen for this study were chosen at random from individuals at the University of Bristol, with no prerequisites, in a Hallway testing manner. This lead to a consistent mix of individuals mostly in the demographic of students of ages 18-25. 20 subjects were tested, with 18 completing the week later memory test. Although there was little or no choice for test subjects, this group is a fair representation of the target audience of this training application, and importantly most students in this age range will have similar experience in video gaming, and thus should not affect the results in this small sample size. Although, there may be a discussion to be had with regards to potential disparities between males and females participating in spatial memory studies. 
 
-In order to negate the effect of learning for participants, an in-between groups user study is the only option, although this unfortunately doubles the required sample size, and reduces the statistical power of  each user's results. To ensure that users with less video gaming experience are not restricted by trying to understand how to manipualte themselves within the scene and use the controlled, users are able to practice in a demo environment prior to entering the training environment; this environment can be seen in Section \ref{demo}.
+In order to negate the effect of learning for participants, an in-between groups user study is the only option, although this unfortunately doubles the required sample size, and reduces the statistical power of  each user's results. To ensure that users with less video gaming experience are not restricted by trying to understand how to manipulate themselves within the scene and use the controller, users are able to practice in a demo environment prior to entering the training environment; this environment can be seen in Section \ref{demo}.
 
 In order to assess the spatial memory of a user, CANTAB's Library of cognitive tests was referenced in order to determine an appropriate strategy. "Spatial Working Memory requires retention and manipulation of visuospatial information. This self-ordered test has notable executive function demands and provides a measure of strategy as well as working memory errors" \footnote{ CANTAB: Spatial Working Memory (SWM) Test \url{https://goo.gl/W7NTSM}}. Thus a similar, simple test was constructed in the training environments. 
 
 \subsection{Task}
-Users are placed in one of the two training environments. In each of these two environments, there are 9 labelled objects located in the scene. The user is able to interact with each object to the extent that they are able to click on the object, and their location changes to near the object. The user is given 2 minutes in order to memorize these objects. After 2 minutes, the user exits the environment, they then immediately complete a memory test for the location of each of the 9 objects in the scene. Their performance, namely error rate, is recorded. A week later, the study participant will once again complete an identical memory test, and again their performance is recorded. In the memory test, the user is presented with the layout the D-Class Lifeboat, with 9 potential locations. The user is informed that each of these locations contains exactly one item. Figure \ref{layout-diagram} shows the diagram the participants are shown. 
+Users are placed in one of the two training environments. In each of these two environments, there are 9 labelled objects located in the scene. The user is able to interact with each object to the extent that they are able to click on the object, and their location changes to near the object. The user is given 2 minutes in order to memorise these objects. After 2 minutes, the user exits the environment, they then immediately complete a memory test for the location of each of the 9 objects in the scene. Their performance, namely error rate, is recorded. A week later, the study participant will once again complete an identical memory test, and again their performance is recorded. In the memory test, the user is presented with the layout the D-Class Lifeboat, with 9 potential locations. The user is informed that each of these locations contains exactly one item. Figure \ref{layout-diagram} shows the diagram the participants are shown. 
 
 \begin{minipage}{\textwidth}
 \hfill \break
@@ -858,11 +895,11 @@ For the initial recall task and recall task 1 week after, a two-tailed t-test re
 \section{Evaluation}
 These results prove that the computer-generated environment was far superior to the 360-image environment in the training of participants for this specific task. Not only did participants that were trained in the CG environment perform considerably better during the memory test taken immediately after, this group were able to recall the layout of the vessel better after a week than the participants which were trained in the 360-image environment could immediately after training. Suggesting that this group were able to acquire a deeper spatial awareness than that of the second group. 
 
-Although this has proven conclusively that the computer generated training environment was superior, it is difficult to conclude the cause of this superiority. The main functional factors which likely lead to this difference are, Scene Complexity and noise, and Stereoscopic vision. Other factors which may have influenced these results are discussed in Section \ref{discussion}.
+Although this has proven conclusively that the computer generated training environment was superior, it is difficult to conclude the cause of this superiority. The main functional factors which likely lead to this difference are, Scene Complexity and noise, and Stereoscopic vision which affects a user's sense of presence. Other factors which may have influenced these results are discussed in Section \ref{discussion}.
 
 \subsection{Scene Complexity}
 
-The disparity between the two environments for scene complexity is quite substantial. In the CG environment, the user is presented with only simple textures, and a monotonic background scene. The 3D model is only populated with crucial items, in addition to the items to be recalled. Whereas in the 360-image environment, the background scene is complex, and the boat is littered with many - potentially distracting - elements. Although this may be have been a factor in the acquisition of spatial awareness, it is difficult to determine quantitavely how much this influenced the results. In this instance - where a user must recall the scene purely from memory, with no prompts - it is fair to conclude that increased complexity of the scene was likely detrimental to performance in memory tests. But, crucially, there is a discussion to be had on the effect of context on spatial cognition. In particular, users which experienced the 360-image environment may have performed better if they were recalling the items whilst actually on the vessel, as they had been trained with a more realistic environment. Further discussion on this is had in Section \ref{context}.
+The disparity between the two environments for scene complexity is quite substantial. In the CG environment, the user is presented with only simple textures, and a monotonic background scene. The 3D model is only populated with crucial items, in addition to the items to be recalled. Whereas in the 360-image environment, the background scene is complex, and the boat is littered with many - potentially distracting - elements. Although this may be have been a factor in the acquisition of spatial awareness, it is difficult to determine quantitatively how much this influenced the results. In this instance - where a user must recall the scene purely from memory, with no prompts - it is fair to conclude that increased complexity of the scene was likely detrimental to performance in memory tests. But, crucially, there is a discussion to be had on the effect of context on spatial cognition. In particular, users which experienced the 360-image environment may have performed better if they were recalling the items whilst actually on the vessel, as they had been trained with a more realistic environment. Further discussion on this is had in Section \ref{context}.
 
 \subsection{Stereoscopic Vision}\label{stereo}
 Potentially the most substantial difference found between the two presentation media is the difference between monoscopic and stereoscopic vision. There is little literature on the comparison of stereoscopic and monoscopic vision and its effect on spatial cognition, and literature that does exist has given mixed results \citep{price}. Although, no studies were discovered which had compared these media using a VR headset for both environments. 
@@ -876,7 +913,7 @@ From anecdotal user feedback there existed a disparity between a user's immersio
 \section{Discussion}\label{discussion}
 
 \subsection{Context}\label{context}
-The environment in which user's recall their training is crucial. In a study by \cite{Godden1975} which trained participants above and below water, participants who were taught underwater better recalled that training when underwater, and vice versa. Thus, it would be fair to assume that although the CG led to less user errors in a neutral environment for recall, it is likely that the errors made by users from the 360-image environment would be reduced if they were to be recalled whilst actually on the vessel; since they had been trained in a seemingly identical environment. With this in mind, it would be difficult to say which environment would translate to better results in the real world, as discussed in Section \ref{further}, further study would be required to conclude this. 
+The environment in which user's recall their training is crucial. In a study by \cite{Godden1975} which trained participants above and below water, participants who were taught underwater better recalled that training when underwater, and vice versa. Thus, it would be fair to assume that although the CG environment led to less user errors in a neutral environment for recall, it is likely that the errors made by users from the 360-image environment would be reduced if they were to be recalled whilst actually on the vessel; since they had been trained in a seemingly identical environment. With this in mind, it would be difficult to say which environment would translate to better results in the real world, as discussed in Section \ref{further}, further study would be required to conclude this. 
 
 \subsection{Novelty}\label{novelty}
 "When experiencing a novel environment ... people are typically more aroused and broadly focused on the tasks to be performed or the situation to be experienced" \citep{Witmer1998}. Anecdotally, participants which used the CG environment were generally far more enthused by the experience. Although the 360 environment is an interesting experience it did not seem to be as engaging for users. This could be theorised to be caused by the lack of stereoscopic vision making the experience less immersive, or that the simpler scene made it more easy to engage with. Although, I would speculate that this is most likely caused by the fact that the CG environment is a more novel experience, in comparison to the 360-scene which may seem like a picture gallery. 
@@ -902,7 +939,7 @@ From a software development standpoint, a fully functional deployment would clea
 Due to the mobile nature of modern HMDs, a well deployed version of these applications would be easily accessible to Lifeboat stations nationally. Each station would need a modern smartphone device, and a Google Daydream View HMD. With only this equipment, a station and its crew would be able to access a fully functional virtual training environment. This is in stark contrast to the static virtual training environment which is based in RNLI Headquarters in Poole. 
 
 \subsubsection{Effective}
-The user study conducted proved that users a capable of learning and retaining knowledge of the layout of the D-Class after just 2 minutes experience of the CG environment. Further studies are required to conclude how well this translates to the real world, but preliminary results have proven promising. 
+The user study conducted proved that users are capable of learning and retaining knowledge of the layout of the D-Class after just 2 minutes experience of the CG environment. Further studies are required to conclude how well this translates to the real world, but preliminary results have proven promising. 
 
 \subsection{User Study}
 The user study proved, with a strongly significant result, that the CG environment helped users recall - and retain knowledge of - the layout of the boat considerably better than the 360 environment was capable of doing. As discussed, the key controlled factors which may have caused this disparity are the difference of stereoscopic and monoscopic display, and simple and complex scenes. The effect of these factors could be quantified with further study, which is discussed in Section \ref{further}. Another factor which may or may not have effected performance is that of context of recall, as discussed in Section \ref{context}; this could similarly be accounted for as discussed in Section \ref{further-context}. Finally, novelty may have affected the effectiveness of each application (Section \ref{context}), since users may have been more engaged with the more novel CG environment. The effect of novelty could be approached in a qualitative study. 
@@ -911,27 +948,27 @@ The user study proved, with a strongly significant result, that the CG environme
 To conclude, it is pertinent to refer back to the primary research questions as stated in Section \ref{tech-summary}:
 
 \begin{itemize}
-    \item Which technological approach, if any, is the most effective way for the RNLI to train crew members in a virtual environment?
+    \item \textit{Which technological approach, if any, is the most effective way for the RNLI to train crew members in a virtual environment?}
 \end{itemize}
 
-The user study concluded that in this task, the most effective way to train individuals was with a computer-generated environment. The RNLI, or similar organisations, should conduct further investigation into the effectiveness of computer-generated virtual reality environments. 
+The user study concluded that in this task, the most effective way to train individuals was with a computer-generated environment. The RNLI, or similar organisations, should conduct further investigation into the effectiveness of computer-generated virtual reality environments. Although, further consideration must be given to stereoscopic 360-image environments.
 
 \section{Future Work}\label{further}
 \subsection{Computer-Generated Environment}
-The CG environment application developed during this project has a broad scope for further development. Much of that scope is a necessary step that must be taken to construct a complete application, such as menu's and UI elements, further 3D models, and further training units. 
+The CG environment application developed during this project has a broad scope for further development. Much of that scope is a necessary step that must be taken to construct a complete application, such as menus and UI elements, further 3D models, and further training units. 
 
-For further 3D models, each of the vessels available in the fleet would need to be reconstructed in 3D. Conveniently, the RNLI fleet is currently in the process of modernisation. The future fleet of vessels which will require a volunteer crew will consist of the D-Class, B-Class, Shannon, and Tamar class lifeboats. Each of these vessels are considerably more complex than the D-Class model constructed in this project, but a 3D model would only need to be constructed once, and would serve more purposes than to simply be used in the training application. 
+For further 3D models, each of the vessels available in the fleet would need to be reconstructed in 3D. Conveniently, the RNLI fleet is currently in the process of modernisation which will reduce the variety of vessels. The future fleet of vessels which will require a volunteer crew will consist of the D-Class, B-Class, Shannon, and Tamar class lifeboats. Each of these vessels are considerably more complex than the D-Class model constructed in this project, but a 3D model would only need to be constructed once, and would serve more purposes than to simply be used in the training application. 
 
 The entire list of assessment units in the crew training programme are possible to implement in the virtual training environment. With that said, there are specific units which would be most benefited by the use of a virtual training implementation. These units are the units which typically are associated with excessive cost or danger. In particular, capsize drills would be an appropriate unit to replicate in a virtual training environment. 
 
 \subsection{360-Degree Image Environment}
-The considerable improvement that could be made to the 360-image environment is the use of more sophisticated technology to capture the 360-degree. Specifically, the use of a 3D 360-degree camera would enable the development of a stereoscopic 360-image environment. This would allow for the construction of a considerably more immersive environment, which would potentially give users a greater sense of presence within the scene. 
+The considerable improvement that could be made to the 360-image environment is the use of more sophisticated technology to capture the 360-degree images. Specifically, the use of a 3D 360-degree camera would enable the development of a stereoscopic 360-image environment. This would allow for the construction of a considerably more immersive environment, which would potentially give users a greater sense of presence within the scene. 
 
 \subsection{Context}\label{further-context}
-With respect to future academic work, there are many unanswered questions. Most fundamentally is the effect of context in the recall of items. 3D environments have been proven to be superior when recall will be required in a neutral environment, with minimal visual guides. But, it is not yet conclusive how these results would transfer to the real world, where the 360-image training environment would be considerably more similar to the environment in which the users would be expected to recall the spatial properties of the environment. A study where users are asked to recall the spatial properties of the environment while they are on the vessel, should be able to determine shed light on the impact if this factor on the training of spatial ability. 
+With respect to future academic work, there are many unanswered questions. Most fundamentally is the effect of context in the recall of items. 3D environments have been proven to be superior when recall will be required in a neutral environment, with minimal visual guides. But, it is not yet conclusive how these results would transfer to the real world, where the 360-image training environment would be considerably more similar to the environment in which the users would be expected to recall the spatial properties of the environment. A study where users are asked to recall the spatial properties of the environment while they are on the vessel, should be able to shed light on the impact of this factor on the training of spatial ability. 
 
 \subsection{Route, and Survey Knowledge}
-Further study into the training capabilities of potential virtual environment has a large scope. This project was focussed on the training and testing of a user's landmark knowledge of an environment, and their ability to recall those landmarks, it did not observe into the training of a person's route or survey knowledge. In order to do this, a further study could be undertaken which assesses a user's patch knowledge; knowledge of the patch of coastline that the trainees Lifeboat station is responsible for.
+Further study into the training capabilities of potential virtual environment has a large scope. This project was focused on the training and testing of a user's landmark knowledge of an environment, and their ability to recall those landmarks, it did not observe the training of a person's route or survey knowledge. In order to do this, a further study could be undertaken which assesses a user's patch knowledge; knowledge of the patch of the coastline that the trainees Lifeboat station is responsible for.
 
 Testing patch knowledge requires the user to travel around a small geographical area, this would typically be a harbour or coastline. This area consists of multiple landmarks and hazards, such as piers, beaches, boats, and rocks. The user must remember these landmarks, and be able to travel between them, utilising their landmark, route, and survey knowledge acquired of the area. 
 
